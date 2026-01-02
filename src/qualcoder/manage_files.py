@@ -166,7 +166,7 @@ class DialogManageFiles(QtWidgets.QDialog):
     def help():
         """ Open help for transcribe section in browser. """
 
-        url = "https://github.com/ccbogel/QualCoder/wiki/3.2.-Files"
+        url = "https://qualcoder-org.github.io/doc/en/3.2.-Files"
         webbrowser.open(url)
 
     def pseudonyms(self):
