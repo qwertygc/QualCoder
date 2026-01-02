@@ -1307,7 +1307,7 @@ Click "Yes" to start now.')
                 while reply is None or reply == QtWidgets.QMessageBox.StandardButton.Help:
                     reply = msg_box.exec()
                     if reply == QtWidgets.QMessageBox.StandardButton.Help:
-                        webbrowser.open('h"https://qualcoder-org.github.io/doc/'+config['language']+'/2.3.-AI-Setup')                
+                        webbrowser.open('h"https://qualcoder-org.github.io/doc/en/2.3.-AI-Setup')                
                 if reply == QtWidgets.QMessageBox.StandardButton.Yes:
                     self.ai_setup_wizard()  # (will also init the llm)
             else:
