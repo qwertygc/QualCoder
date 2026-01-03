@@ -3263,6 +3263,13 @@ def install_noto_sans():
         decoded_data = base64.decodebytes(NotoSans)
         file_.write(decoded_data)
 
+def help_wiki(slug):
+    """ Redirect to the wiki website / Open Help in Browser """
+   lang = "en"
+   if self.app.settings['language'] == 'fr':
+       lang = "fr"
+   return "https://qualcoder-org.github.io/doc/"+lang+"/"+slug
+    
 
 if __name__ == "__main__":
      # Pyinstaller fix

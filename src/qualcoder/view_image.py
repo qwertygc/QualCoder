@@ -1501,9 +1501,7 @@ class DialogCodeImage(QtWidgets.QDialog):
     @staticmethod
     def help():
         """ Open help for transcribe section in browser. """
-
-        url = "https://github.com/ccbogel/QualCoder/wiki/4.4.-Coding-Images"
-        webbrowser.open(url)
+        webbrowser.open(help_wiki("4.4.-Coding-Images"))
 
     def eventFilter(self, object_, event):
         """ Using this event filter to identify treeWidgetItem drop events.

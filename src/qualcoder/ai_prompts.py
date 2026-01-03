@@ -608,8 +608,7 @@ class DialogAiEditPrompts(QtWidgets.QDialog):
     @staticmethod
     def help():
         """ Open help in browser. """
-        url = "https://github.com/ccbogel/QualCoder/wiki/6.2.-AI-Prompt-Editing"
-        webbrowser.open(url)
+        webbrowser.open(help_wiki("6.2.-AI-Prompt-Editing"))
         
     def fill_tree(self):
         """ Fill tree with prompts, top level items are the prompt types. """

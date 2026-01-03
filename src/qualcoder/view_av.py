@@ -295,8 +295,7 @@ class DialogCodeAV(QtWidgets.QDialog):
     def help():
         """ Open help for transcribe section in browser. """
 
-        url = "https://github.com/ccbogel/QualCoder/wiki/4.5.-Coding-Audio-and-Video"
-        webbrowser.open(url)
+        webbrowser.open(help_wiki("4.5.-Coding-Audio-and-Video"))
 
     def find_code_in_tree(self):
         """ Find a code by name in the codes tree and select it.
