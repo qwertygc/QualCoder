@@ -18,7 +18,7 @@ If not, see <https://www.gnu.org/licenses/>.
 Author: Colin Curtain (ccbogel)
 https://github.com/ccbogel/QualCoder
 https://qualcoder.wordpress.com/
-https://qualcoder-org.github.io/
+https://qualcoder.org/
 """
 
 import multiprocessing
@@ -1369,7 +1369,7 @@ class App(object):
         return msg, backup
         
     def help_wiki(self, page_path):
-        """ Open website doc help page in https://qualcoder-org.github.io.
+        """ Open website doc help page in https://qualcoder.org.
         Assumes English pages are present as a default.
         Args:
             page_path : String : specific page
@@ -1377,12 +1377,12 @@ class App(object):
 
         lang = self.settings['language']
         try:
-            urllib.request.urlopen(f"https://qualcoder-org.github.io/doc/{lang}/{page_path}")
+            urllib.request.urlopen(f"https://qualcoder.org/doc/{lang}/{page_path}")
         except urllib_err.HTTPError as err:
-            logger.warning(f"App.help_wiki:\nhttps://qualcoder-org.github.io/doc/{lang}/{page_path}\n{err}")
+            logger.warning(f"App.help_wiki:\nhttps://qualcoder.org/doc/{lang}/{page_path}\n{err}")
             if err.code == 404:
                 lang = "en"
-        webbrowser.open(f"https://qualcoder-org.github.io/doc/{lang}/{page_path}")
+        webbrowser.open(f"https://qualcoder.org/doc/{lang}/{page_path}")
        
 
 class MainWindow(QtWidgets.QMainWindow):

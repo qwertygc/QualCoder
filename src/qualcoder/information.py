@@ -17,7 +17,7 @@ If not, see <https://www.gnu.org/licenses/>.
 Author: Colin Curtain (ccbogel)
 https://github.com/ccbogel/QualCoder
 https://qualcoder.wordpress.com/
-https://qualcoder-org.github.io/
+https://qualcoder.org/
 """
 
 from PyQt6 import QtWidgets, QtCore
@@ -87,7 +87,7 @@ Mike MacCana for the source code for the docx module.<br /> \
 Julius Reich for creating the QualCoder logo.<br /> \
 Kai Dröge for developing and testing the code to incorporate artificial intelligence models for AI, and much more.<br /> \
 Justin Missaghieh-Poncet for French translations, some code development and for setting up the new manual.<br />\
-<a href="https://qualcoder-org.github.io" target="_blank">https://qualcoder-org.github.io</a><br /> \
+<a href="https://qualcoder.org" target="_blank">https://qualcoder.org</a><br /> \
 Lorenzo Salomón for Spanish translations and for some code development.<br /> \
 Jofen Kihlstrom for past Swedish translations.<br /> \
 To the many members on Github for supporting this project.</p>\
