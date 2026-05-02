@@ -1757,6 +1757,19 @@ class DialogCodeImage(QtWidgets.QDialog):
                 parent = self.ui.treeWidget.itemAt(event.position().toPoint())
                 self.item_moved_update_data(item, parent)
                 return True
+            # Scroll the tree when dragged item it as top or bottom edges
+            if event.type() == QtCore.QEvent.Type.DragMove:
+                vsb = self.ui.treeWidget.verticalScrollBar()
+                item = self.ui.treeWidget.currentItem()
+                top = self.ui.treeWidget.visualRect(
+                    self.ui.treeWidget.indexAt(self.ui.treeWidget.rect().topLeft())).bottom()
+                bottom = self.ui.treeWidget.viewport().height()
+                y = event.position().toPoint().y()
+                if y < top + 8:  # Margin 0f 8
+                    vsb.setValue(vsb.value() - 1)
+                if y > bottom - 8:  # Margin of 8
+                    vsb.setValue(vsb.value() + 1)
+                return True
         if object_ is self.scene:
             # Detect mouse movement on the scene to update the dashed rectangle in real-time <- L
             if type(event) == QtWidgets.QGraphicsSceneMouseEvent and event.type() == QtCore.QEvent.Type.GraphicsSceneMouseMove:

@@ -3385,6 +3385,18 @@ class DialogCodeText(QtWidgets.QWidget):
                 parent = self.ui.treeWidget.itemAt(event.position().toPoint())
                 self.item_moved_update_data(item, parent)
                 return True
+            # Scroll the tree when dragged item it as top or bottom edges
+            if event.type() == QtCore.QEvent.Type.DragMove:
+                vsb = self.ui.treeWidget.verticalScrollBar()
+                item = self.ui.treeWidget.currentItem()
+                top = self.ui.treeWidget.visualRect(self.ui.treeWidget.indexAt(self.ui.treeWidget.rect().topLeft())).bottom()
+                bottom = self.ui.treeWidget.viewport().height()
+                y = event.position().toPoint().y()
+                if y < top + 8:  # Margin 0f 8
+                    vsb.setValue(vsb.value() - 1)
+                if y > bottom - 8:  # Margin of 8
+                    vsb.setValue(vsb.value() + 1)
+                return True
         # Change start and end code positions using alt arrow left and alt arrow right
         # and shift arrow left, shift arrow right
         if type(event) == QtGui.QKeyEvent and object_ is self.ui.plainTextEdit:
