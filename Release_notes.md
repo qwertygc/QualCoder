@@ -82,6 +82,8 @@ Can export the coded document (to ODF format) via: coding with coloured highligh
 
 Menu for the header section of the codes-tree to have automatic column resizing or manual resizing. Also for code trees in other coding areas.
 
+Can move a dragged item to the top and bottom of the visible tree, and the tree will scroll.
+
 Added a Filter icon when the Codes tree is fileter to specific codes (via Show codes like, or Show codes by colour).
 
 ## Code PDF
@@ -90,9 +92,13 @@ Menu for the header section of the codes-tree to have automatic column resizing 
 
 Added a Filter icon when the Codes tree is fileter to specific codes (via Show codes like, or Show codes by colour).
 
+Can move a dragged item to the top and bottom of the visible tree, and the tree will scroll.
+
 ## Code images
 
 Can resize coded areas using rightclick menu option and resize using handles.
+
+Can move a dragged item to the top and bottom of the visible tree, and the tree will scroll.
 
 ## Co-occurrence report
 
