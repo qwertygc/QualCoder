@@ -74,30 +74,30 @@ class DialogInformation(QtWidgets.QDialog):
         super().accept()
 
 
-about = _('<h1 class="western">About QualCoder</h1>\
+about = f'<h1 class="western">{_("About")} QualCoder</h1>\
 <h2 class="western">Version:</h2>\
 <p>QualCoderVersion</p>\
-<p>Optional: Install VLC for audio and video coding.<br /> \
-Optional: Install ffmpeg for waveform images.</p>\
+<p>{_("Optional: Install VLC for audio and video coding.")}<br /> \
+{_("Optional: Install ffmpeg for waveform images.")}</p>\
 <p>Tested on: Windows 11.</p>\
 <p></p>\
-<h2 class="western">Acknowledgements</h2>\
-<p>Ronggui Huang and Zhang Gehao for creating RQDA, which inspired this software.<br /> \
-Mike MacCana for the source code for the docx module.<br /> \
-Julius Reich for creating the QualCoder logo.<br /> \
-Kai Dröge for developing and testing the code to incorporate artificial intelligence models for AI, and much more.<br /> \
-Justin Missaghieh-Poncet for French translations, some code development and for setting up the new manual.<br />\
+<h2 class="western">{_("Acknowledgements")}</h2>\
+<p>Ronggui Huang, Zhang Gehao - {_("Created RQDA - inspiration for QualCoder.")}<br /> \
+Mike MacCana -  {_("Source code for the docx module.")}<br /> \
+Julius Reich - {_("Created the QualCoder logo.")}<br /> \
+Kai Dröge -  {_("Programming, artificial intelligence and much more.")}<br /> \
+Justin Missaghieh-Poncet - {_("French translations, programming, setting up the new website and more.")}<br />\
 <a href="https://qualcoder.org" target="_blank">https://qualcoder.org</a><br /> \
-Lorenzo Salomón for Spanish translations and for some code development.<br /> \
+Lorenzo Salomón - {_("Programming and Spanish translations.")}<br /> \
 Jofen Kihlstrom for past Swedish translations.<br /> \
-To the many members on Github for supporting this project.</p>\
+{_("To the many members on Github for supporting this project.")}</p>\
 <h2>Citation</h2>\
 <p>Curtain C, Dröge K, Missaghieh--Poncet J, Salomón L. (2026) QualCoder Version [Computer software]. \
 Retrieved from https://github.com/ccbogel/QualCoder/releases/tag/QualCoderTag</p>\
 <h2 class="western">Other details</h2> \
 <p>The qda data folder contains folders for imported documents, \
-images, audio and video. It also contains the sqlite database, named data.qda, which stores the coding data.</p>\
-<p>QualCoder is written in python3 using Qt6 for the graphical interface.</p>\
+images, audio and video. It also contains the sqlite database, named data.qda, which stores the coding data.<br /> \
+QualCoder is written in python3 using Qt6 for the graphical interface.</p>\
 <p>Created by Colin Curtain BPharm GradDipComp PhD, programmer, Lecturer University of Tasmania.</p>\
 <h2 class="western">Licenses</h2>\
 <h3>LGPL-3.0 License</h3>\
@@ -167,7 +167,7 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT<br />\
 HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,<br />\
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING<br />\
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR<br />\
-OTHER DEALINGS IN THE SOFTWARE.')
+OTHER DEALINGS IN THE SOFTWARE.'
 
 menu_shortcuts = f'<h1>{_("Menu key shortcuts")}</h1>\n\
 <table><tr><td><b>{_("Menu shortcuts")}</b></td><td><b>{_("Project menu shortcuts")}</b></td>\n\
