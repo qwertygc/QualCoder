@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-02 08:57+1000\n"
-"PO-Revision-Date: 2026-04-30 07:49+1000\n"
+"PO-Revision-Date: 2026-05-02 09:25+1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src\qualcoder\add_attribute.py:76
 msgid "This attribute name already exists in cases, files or journals."
@@ -3548,11 +3548,11 @@ msgstr ""
 
 #: src\qualcoder\information.py:172
 msgid "Menu key shortcuts"
-msgstr ""
+msgstr "メニューキーのショートカット"
 
 #: src\qualcoder\information.py:173
 msgid "Menu shortcuts"
-msgstr ""
+msgstr "メニューのショートカット"
 
 #: src\qualcoder\information.py:173
 #, fuzzy
@@ -3561,7 +3561,7 @@ msgstr "プロジェクトインポート"
 
 #: src\qualcoder\information.py:174
 msgid "Files and Cases menu shortcuts"
-msgstr ""
+msgstr "「ファイル」および「ケース」メニューのショートカット"
 
 #: src\qualcoder\information.py:175
 #, fuzzy
@@ -3580,7 +3580,7 @@ msgstr "ファイルの削除"
 
 #: src\qualcoder\information.py:178
 msgid "Open Files and Cases menu"
-msgstr ""
+msgstr "「ファイルと案件」メニューを開く"
 
 #: src\qualcoder\information.py:178
 #, fuzzy
@@ -3609,7 +3609,7 @@ msgstr "新しいジャーナル"
 
 #: src\qualcoder\information.py:180
 msgid "Open Reports menu"
-msgstr ""
+msgstr "「レポート」メニューを開く"
 
 #: src\qualcoder\information.py:180
 #, fuzzy
@@ -3633,19 +3633,19 @@ msgstr "参考文献を編集する"
 
 #: src\qualcoder\information.py:182
 msgid "Exit"
-msgstr ""
+msgstr "終了"
 
 #: src\qualcoder\information.py:184
 msgid "Coding menu shortcuts"
-msgstr ""
+msgstr "メニューのショートカット設定"
 
 #: src\qualcoder\information.py:184
 msgid "Reports menu shortcuts"
-msgstr ""
+msgstr "レポートメニューのショートカット"
 
 #: src\qualcoder\information.py:184
 msgid "Help menu shortcuts"
-msgstr ""
+msgstr "ヘルプメニューのショートカット"
 
 #: src\qualcoder\information.py:185
 #, fuzzy
@@ -3659,7 +3659,7 @@ msgstr "コードツリー"
 
 #: src\qualcoder\information.py:185
 msgid "Help contents"
-msgstr ""
+msgstr "ヘルプの内容"
 
 #: src\qualcoder\information.py:186
 #, fuzzy
@@ -3731,7 +3731,7 @@ msgstr "デフォルトのクエリー"
 
 #: src\qualcoder\information.py:196
 msgid "Manage menu key shortcuts"
-msgstr ""
+msgstr "メニューのキーボードショートカットを管理する"
 
 #: src\qualcoder\information.py:197 src\qualcoder\manage_files.py:2681
 #: src\qualcoder\manage_files.py:2683 src\qualcoder\view_charts.py:879
@@ -3760,7 +3760,7 @@ msgstr "参考"
 
 #: src\qualcoder\information.py:199
 msgid "Help"
-msgstr ""
+msgstr "ヘルプ"
 
 #: src\qualcoder\information.py:200 src\qualcoder\manage_references.py:236
 msgid "View file"
@@ -3875,23 +3875,23 @@ msgstr "選択されたファイル"
 
 #: src\qualcoder\information.py:213
 msgid "Manage files - view A/V shortcuts"
-msgstr ""
+msgstr "ファイルの管理 - オーディオ/ビデオのショートカットを表示"
 
 #: src\qualcoder\information.py:214
 msgid "Rewind 30 seconds."
-msgstr ""
+msgstr "30秒巻き戻す。"
 
 #: src\qualcoder\information.py:215 src\qualcoder\information.py:299
 msgid "Rewind 5 seconds"
-msgstr ""
+msgstr "5秒巻き戻す"
 
 #: src\qualcoder\information.py:216 src\qualcoder\information.py:300
 msgid "Forward 30 seconds"
-msgstr ""
+msgstr "30秒先へ"
 
 #: src\qualcoder\information.py:217
 msgid "Start / pause.On start rewind slightly"
-msgstr ""
+msgstr "再生／一時停止。再生開始時に少し巻き戻す"
 
 #: src\qualcoder\information.py:218
 #, fuzzy
@@ -3900,28 +3900,28 @@ msgstr "タイムスタンプ形式"
 
 #: src\qualcoder\information.py:219
 msgid "Enter a new speakers name into shortcuts"
-msgstr ""
+msgstr "ショートカットに新しいスピーカーの名前を入力する"
 
 #: src\qualcoder\information.py:220
 msgid "Delete speaker names from shortcuts"
-msgstr ""
+msgstr "ショートカットからスピーカー名を削除する"
 
 #: src\qualcoder\information.py:221
 msgid "Insert speaker in format[speaker name]"
-msgstr ""
+msgstr "[スピーカー名]の形式でスピーカー名を挿入してください"
 
 #: src\qualcoder\information.py:222 src\qualcoder\information.py:304
 msgid "Increase play rate"
-msgstr ""
+msgstr "プレイ率を高める"
 
 #: src\qualcoder\information.py:223 src\qualcoder\information.py:305
 msgid "Decrease play rate"
-msgstr ""
+msgstr "再生回数を減らす"
 
 #: src\qualcoder\information.py:224 src\qualcoder\information.py:262
 #: src\qualcoder\information.py:277 src\qualcoder\information.py:306
 msgid "When tree item selected - Rename code or category"
-msgstr ""
+msgstr "ツリー項目が選択されたとき - コードまたはカテゴリの名前を変更する"
 
 #: src\qualcoder\information.py:228
 #, fuzzy
@@ -3954,6 +3954,8 @@ msgstr "コード化されたテキストを選択する"
 msgid ""
 "Show all codes in text ( if selected code previous or next has been used)"
 msgstr ""
+"テキスト内のすべてのコードを表示（選択したコードの前後にあるコードが使用され"
+"ている場合）"
 
 #: src\qualcoder\information.py:237 src\qualcoder\information.py:269
 #: src\qualcoder\information.py:284
@@ -3964,27 +3966,27 @@ msgstr "重要なフラグを付けたコーディングを表示する"
 #: src\qualcoder\information.py:238 src\qualcoder\information.py:270
 #: src\qualcoder\information.py:285
 msgid "Help - opens in browser"
-msgstr ""
+msgstr "ヘルプ - ブラウザで開きます"
 
 #: src\qualcoder\information.py:239
 msgid "Jump to search box"
-msgstr ""
+msgstr "検索ボックスへ移動"
 
 #: src\qualcoder\information.py:240
 msgid "The last code that was unmarked, restore that coding"
-msgstr ""
+msgstr "マークが外されていた最後のコードを、元の状態に戻してください"
 
 #: src\qualcoder\information.py:241
 msgid "Enter and Exit Edit mode"
-msgstr ""
+msgstr "編集モードの開始と終了"
 
 #: src\qualcoder\information.py:242
 msgid "Annotate - Current text selection"
-msgstr ""
+msgstr "注釈を追加 - 現在選択されているテキスト"
 
 #: src\qualcoder\information.py:243 src\qualcoder\information.py:292
 msgid "Quick Mark with code - for current selection"
-msgstr ""
+msgstr "コード付きクイックマーク - 現在の選択範囲に対して"
 
 #: src\qualcoder\information.py:244
 #, fuzzy
@@ -3993,7 +3995,7 @@ msgstr "クリックした位置の後にコーデイングをシフトする"
 
 #: src\qualcoder\information.py:245
 msgid "Hide / Unhide top groupbox"
-msgstr ""
+msgstr "最上部のグループボックスの表示／非表示"
 
 #: src\qualcoder\information.py:246
 #, fuzzy
@@ -4002,7 +4004,7 @@ msgstr "クリックした位置の後にコーデイングをシフトする"
 
 #: src\qualcoder\information.py:247 src\qualcoder\information.py:289
 msgid "Show codes like (when text coding area is in focus)"
-msgstr ""
+msgstr "（テキスト入力エリアにフォーカスがあるときなど）コードを表示する"
 
 #: src\qualcoder\information.py:248 src\qualcoder\information.py:290
 #, fuzzy
@@ -4016,23 +4018,24 @@ msgstr "選ばれたコーダーはいない"
 
 #: src\qualcoder\information.py:250
 msgid "Shortcut to cycle through overlapping codes - at clicked position"
-msgstr ""
+msgstr "クリックした位置で、重なり合うコードを切り替えるショートカット"
 
 #: src\qualcoder\information.py:251 src\qualcoder\information.py:293
 msgid "Search text - may include current selection"
-msgstr ""
+msgstr "検索テキスト - 現在選択されているテキストを含める"
 
 #: src\qualcoder\information.py:252 src\qualcoder\information.py:294
 msgid "Opens a context menu for recently used codes for marking text"
 msgstr ""
+"テキストのマーク付けに使用した直近のコードのコンテキストメニューを開きます"
 
 #: src\qualcoder\information.py:253
 msgid "Reverse text direction: Left to Right | Right to Left"
-msgstr ""
+msgstr "テキストの方向を反転：左から右 | 右から左"
 
 #: src\qualcoder\information.py:254
 msgid "Unmark At clicked position in the text"
-msgstr ""
+msgstr "テキスト内のクリックした位置のマークを解除する"
 
 #: src\qualcoder\information.py:255
 #, fuzzy
@@ -4041,29 +4044,31 @@ msgstr "選択したテキストにセグメントをリンクする"
 
 #: src\qualcoder\information.py:256
 msgid "Alt Left arrow.Shrink coding to the left"
-msgstr ""
+msgstr "Alt + 左矢印キー。コードを左側に縮小"
 
 #: src\qualcoder\information.py:257
 msgid "Alt Right arrow.Shrink coding to the right"
-msgstr ""
+msgstr "右矢印。コードを右側に縮小"
 
 #: src\qualcoder\information.py:258
 msgid "Shift Left arrow.Extend coding to the left"
-msgstr ""
+msgstr "左矢印キー。コーディング範囲を左側に拡張する"
 
 #: src\qualcoder\information.py:259
 msgid "Shift Right arrow.Extend coding to the right"
-msgstr ""
+msgstr "右矢印キー。コードを右方向に拡張する"
 
 #: src\qualcoder\information.py:260
 msgid "Describes clicked text character position"
-msgstr ""
+msgstr "クリックされたテキストの文字位置を表します"
 
 #: src\qualcoder\information.py:261
 msgid ""
 "Shift all coding positions after a clicked position by X characters "
 "(negative numbers shift left)"
 msgstr ""
+"クリックした位置から、すべての文字をX文字分移動させる（負の数は左方向への移動"
+"となる）"
 
 #: src\qualcoder\information.py:264
 #, fuzzy
@@ -4072,28 +4077,32 @@ msgstr "画像領域別コード サンバースト"
 
 #: src\qualcoder\information.py:271
 msgid "Show codes like (when coding area is in focus)"
-msgstr ""
+msgstr "（コーディング領域がフォーカスされているときなど）コードを表示する"
 
 #: src\qualcoder\information.py:272
 msgid "The last code is unmarked, undo and restore that coding"
 msgstr ""
+"最後のコードにはマークが付いていません。そのコードの変更を元に戻し、復元して"
+"ください"
 
 #: src\qualcoder\information.py:273
 msgid ""
 "Create a grayed-out image with coloured coded highlights (Wait a few seconds)"
 msgstr ""
+"色分けされたハイライトが付いた、グレー表示の画像を作成します（数秒お待ちくだ"
+"さい）"
 
 #: src\qualcoder\information.py:274
 msgid "Zoom out"
-msgstr ""
+msgstr "ズームアウト"
 
 #: src\qualcoder\information.py:275
 msgid "Zoom in"
-msgstr ""
+msgstr "拡大する"
 
 #: src\qualcoder\information.py:276
 msgid "Right - click on image for menu to rotate image"
-msgstr ""
+msgstr "画像を右クリックすると、画像を回転させるメニューが表示されます"
 
 #: src\qualcoder\information.py:279
 #, fuzzy
@@ -4102,11 +4111,13 @@ msgstr "オーディオ/ビデオセグメントによるコード"
 
 #: src\qualcoder\information.py:286
 msgid "Annotate - for current selection"
-msgstr ""
+msgstr "注釈を追加 - 現在の選択範囲に対して"
 
 #: src\qualcoder\information.py:287
 msgid "Assign segment to currently selected code, and open memo for segment."
 msgstr ""
+"現在選択されているコードにセグメントを割り当て、そのセグメントのメモを開きま"
+"す。"
 
 #: src\qualcoder\information.py:288
 #, fuzzy
@@ -4125,27 +4136,29 @@ msgstr "テキストを含むファイルを表示する"
 
 #: src\qualcoder\information.py:296
 msgid "Go forward 5 seconds."
-msgstr ""
+msgstr "5秒先へ進みます。"
 
 #: src\qualcoder\information.py:297
 msgid "Restore last unmarked code(s) - text code(s) or segment code"
 msgstr ""
+"最後にマークされなかったコードを復元する - テキストコードまたはセグメントコー"
+"ド"
 
 #: src\qualcoder\information.py:298
 msgid "Rewind 30 seconds"
-msgstr ""
+msgstr "30秒巻き戻す"
 
 #: src\qualcoder\information.py:301 src\qualcoder\information.py:302
 msgid "Play / pause.On start rewind slightly"
-msgstr ""
+msgstr "再生／一時停止。再生開始時に少し巻き戻す"
 
 #: src\qualcoder\information.py:303
 msgid "Start and stop av segment creation"
-msgstr ""
+msgstr "AVセグメントの作成を開始および停止する"
 
 #: src\qualcoder\information.py:308
 msgid "Database Queries key shortcuts"
-msgstr ""
+msgstr "データベースクエリのキーボードショートカット"
 
 #: src\qualcoder\information.py:309
 #, fuzzy

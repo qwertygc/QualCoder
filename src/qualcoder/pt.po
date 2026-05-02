@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-02 08:57+1000\n"
-"PO-Revision-Date: 2026-04-28 08:16+1000\n"
+"PO-Revision-Date: 2026-05-02 09:38+1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src\qualcoder\add_attribute.py:76
 msgid "This attribute name already exists in cases, files or journals."
@@ -3602,11 +3602,11 @@ msgstr ""
 
 #: src\qualcoder\information.py:172
 msgid "Menu key shortcuts"
-msgstr ""
+msgstr "Atalhos de teclado do menu"
 
 #: src\qualcoder\information.py:173
 msgid "Menu shortcuts"
-msgstr ""
+msgstr "Atalhos do menu"
 
 #: src\qualcoder\information.py:173
 #, fuzzy
@@ -3615,7 +3615,7 @@ msgstr "Importação de projetos"
 
 #: src\qualcoder\information.py:174
 msgid "Files and Cases menu shortcuts"
-msgstr ""
+msgstr "Atalhos do menu Arquivos e Casos"
 
 #: src\qualcoder\information.py:175
 #, fuzzy
@@ -3634,7 +3634,7 @@ msgstr "Excluir arquivos"
 
 #: src\qualcoder\information.py:178
 msgid "Open Files and Cases menu"
-msgstr ""
+msgstr "Abrir o menu Arquivos e Processos"
 
 #: src\qualcoder\information.py:178
 #, fuzzy
@@ -3663,7 +3663,7 @@ msgstr "Diario Diario"
 
 #: src\qualcoder\information.py:180
 msgid "Open Reports menu"
-msgstr ""
+msgstr "Abrir o menu Relatórios"
 
 #: src\qualcoder\information.py:180
 #, fuzzy
@@ -3687,19 +3687,19 @@ msgstr "Referência"
 
 #: src\qualcoder\information.py:182
 msgid "Exit"
-msgstr ""
+msgstr "Sair"
 
 #: src\qualcoder\information.py:184
 msgid "Coding menu shortcuts"
-msgstr ""
+msgstr "Criação de atalhos de menu"
 
 #: src\qualcoder\information.py:184
 msgid "Reports menu shortcuts"
-msgstr ""
+msgstr "Atalhos do menu Relatórios"
 
 #: src\qualcoder\information.py:184
 msgid "Help menu shortcuts"
-msgstr ""
+msgstr "Atalhos do menu de ajuda"
 
 #: src\qualcoder\information.py:185
 #, fuzzy
@@ -3713,7 +3713,7 @@ msgstr "Árvore de códigos"
 
 #: src\qualcoder\information.py:185
 msgid "Help contents"
-msgstr ""
+msgstr "Índice da ajuda"
 
 #: src\qualcoder\information.py:186
 #, fuzzy
@@ -3785,7 +3785,7 @@ msgstr "Consultas padrão"
 
 #: src\qualcoder\information.py:196
 msgid "Manage menu key shortcuts"
-msgstr ""
+msgstr "Gerenciar atalhos de teclado do menu"
 
 #: src\qualcoder\information.py:197 src\qualcoder\manage_files.py:2681
 #: src\qualcoder\manage_files.py:2683 src\qualcoder\view_charts.py:879
@@ -3814,7 +3814,7 @@ msgstr "Referência"
 
 #: src\qualcoder\information.py:199
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: src\qualcoder\information.py:200 src\qualcoder\manage_references.py:236
 #, fuzzy
@@ -3931,23 +3931,23 @@ msgstr "Arquivos selecionados"
 
 #: src\qualcoder\information.py:213
 msgid "Manage files - view A/V shortcuts"
-msgstr ""
+msgstr "Gerenciar arquivos - visualizar atalhos de áudio e vídeo"
 
 #: src\qualcoder\information.py:214
 msgid "Rewind 30 seconds."
-msgstr ""
+msgstr "Retroceda 30 segundos."
 
 #: src\qualcoder\information.py:215 src\qualcoder\information.py:299
 msgid "Rewind 5 seconds"
-msgstr ""
+msgstr "Retroceda 5 segundos"
 
 #: src\qualcoder\information.py:216 src\qualcoder\information.py:300
 msgid "Forward 30 seconds"
-msgstr ""
+msgstr "Avançar 30 segundos"
 
 #: src\qualcoder\information.py:217
 msgid "Start / pause.On start rewind slightly"
-msgstr ""
+msgstr "Iniciar/pausar. Ao iniciar, retroceder um pouco"
 
 #: src\qualcoder\information.py:218
 #, fuzzy
@@ -3956,28 +3956,29 @@ msgstr "Formato de carimbo da hora"
 
 #: src\qualcoder\information.py:219
 msgid "Enter a new speakers name into shortcuts"
-msgstr ""
+msgstr "Insira o nome de um novo alto-falante nos atalhos"
 
 #: src\qualcoder\information.py:220
 msgid "Delete speaker names from shortcuts"
-msgstr ""
+msgstr "Excluir os nomes dos alto-falantes dos atalhos"
 
 #: src\qualcoder\information.py:221
 msgid "Insert speaker in format[speaker name]"
-msgstr ""
+msgstr "Insira o nome do palestrante no formato [nome do palestrante]"
 
 #: src\qualcoder\information.py:222 src\qualcoder\information.py:304
 msgid "Increase play rate"
-msgstr ""
+msgstr "Aumentar a taxa de reprodução"
 
 #: src\qualcoder\information.py:223 src\qualcoder\information.py:305
 msgid "Decrease play rate"
-msgstr ""
+msgstr "Reduzir a taxa de reprodução"
 
 #: src\qualcoder\information.py:224 src\qualcoder\information.py:262
 #: src\qualcoder\information.py:277 src\qualcoder\information.py:306
 msgid "When tree item selected - Rename code or category"
 msgstr ""
+"Quando um item da árvore for selecionado - Renomear código ou categoria"
 
 #: src\qualcoder\information.py:228
 #, fuzzy
@@ -4010,6 +4011,8 @@ msgstr "Selecionar texto codificado"
 msgid ""
 "Show all codes in text ( if selected code previous or next has been used)"
 msgstr ""
+"Mostrar todos os códigos no texto (se o código anterior ou seguinte tiver "
+"sido usado)"
 
 #: src\qualcoder\information.py:237 src\qualcoder\information.py:269
 #: src\qualcoder\information.py:284
@@ -4020,27 +4023,27 @@ msgstr "Mostrar codificações assinaladas como importantes"
 #: src\qualcoder\information.py:238 src\qualcoder\information.py:270
 #: src\qualcoder\information.py:285
 msgid "Help - opens in browser"
-msgstr ""
+msgstr "Ajuda - abre no navegador"
 
 #: src\qualcoder\information.py:239
 msgid "Jump to search box"
-msgstr ""
+msgstr "Ir para a caixa de pesquisa"
 
 #: src\qualcoder\information.py:240
 msgid "The last code that was unmarked, restore that coding"
-msgstr ""
+msgstr "O último código que não estava marcado; restaure essa marcação"
 
 #: src\qualcoder\information.py:241
 msgid "Enter and Exit Edit mode"
-msgstr ""
+msgstr "Entrar e sair do modo de edição"
 
 #: src\qualcoder\information.py:242
 msgid "Annotate - Current text selection"
-msgstr ""
+msgstr "Anotar - Seleção de texto atual"
 
 #: src\qualcoder\information.py:243 src\qualcoder\information.py:292
 msgid "Quick Mark with code - for current selection"
-msgstr ""
+msgstr "Marcação rápida com código - para a seleção atual"
 
 #: src\qualcoder\information.py:244
 #, fuzzy
@@ -4049,7 +4052,7 @@ msgstr "Mostrar codificações assinaladas como importantes"
 
 #: src\qualcoder\information.py:245
 msgid "Hide / Unhide top groupbox"
-msgstr ""
+msgstr "Ocultar/Exibir a caixa de grupo superior"
 
 #: src\qualcoder\information.py:246
 #, fuzzy
@@ -4059,6 +4062,7 @@ msgstr "Mostrar codificações assinaladas como importantes"
 #: src\qualcoder\information.py:247 src\qualcoder\information.py:289
 msgid "Show codes like (when text coding area is in focus)"
 msgstr ""
+"Mostrar códigos como (quando a área de codificação de texto estiver em foco)"
 
 #: src\qualcoder\information.py:248 src\qualcoder\information.py:290
 #, fuzzy
@@ -4072,23 +4076,26 @@ msgstr "Nenhum codificador selecionado"
 
 #: src\qualcoder\information.py:250
 msgid "Shortcut to cycle through overlapping codes - at clicked position"
-msgstr ""
+msgstr "Atalho para alternar entre códigos sobrepostos — na posição clicada"
 
 #: src\qualcoder\information.py:251 src\qualcoder\information.py:293
 msgid "Search text - may include current selection"
-msgstr ""
+msgstr "Texto de pesquisa - pode incluir a seleção atual"
 
 #: src\qualcoder\information.py:252 src\qualcoder\information.py:294
 msgid "Opens a context menu for recently used codes for marking text"
 msgstr ""
+"Abre um menu de contexto com os códigos usados recentemente para marcar texto"
 
 #: src\qualcoder\information.py:253
 msgid "Reverse text direction: Left to Right | Right to Left"
 msgstr ""
+"Inverter a direção do texto: Da esquerda para a direita | Da direita para a "
+"esquerda"
 
 #: src\qualcoder\information.py:254
 msgid "Unmark At clicked position in the text"
-msgstr ""
+msgstr "Desmarcar na posição clicada no texto"
 
 #: src\qualcoder\information.py:255
 #, fuzzy
@@ -4097,29 +4104,31 @@ msgstr "Vincular segmento ao texto selecionado"
 
 #: src\qualcoder\information.py:256
 msgid "Alt Left arrow.Shrink coding to the left"
-msgstr ""
+msgstr "Seta para a esquerda. Recuar o código para a esquerda"
 
 #: src\qualcoder\information.py:257
 msgid "Alt Right arrow.Shrink coding to the right"
-msgstr ""
+msgstr "Seta para a direita. Recolher o código para a direita"
 
 #: src\qualcoder\information.py:258
 msgid "Shift Left arrow.Extend coding to the left"
-msgstr ""
+msgstr "Seta para a esquerda. Estender a codificação para a esquerda"
 
 #: src\qualcoder\information.py:259
 msgid "Shift Right arrow.Extend coding to the right"
-msgstr ""
+msgstr "Seta para a direita. Estender a codificação para a direita"
 
 #: src\qualcoder\information.py:260
 msgid "Describes clicked text character position"
-msgstr ""
+msgstr "Descreve a posição do caractere do texto clicado"
 
 #: src\qualcoder\information.py:261
 msgid ""
 "Shift all coding positions after a clicked position by X characters "
 "(negative numbers shift left)"
 msgstr ""
+"Desloque todas as posições de codificação a partir da posição clicada em X "
+"caracteres (números negativos deslocam para a esquerda)"
 
 #: src\qualcoder\information.py:264
 #, fuzzy
@@ -4128,28 +4137,31 @@ msgstr "Código por área de imagem sunburst"
 
 #: src\qualcoder\information.py:271
 msgid "Show codes like (when coding area is in focus)"
-msgstr ""
+msgstr "Mostrar códigos como (quando a área de codificação estiver em foco)"
 
 #: src\qualcoder\information.py:272
 msgid "The last code is unmarked, undo and restore that coding"
-msgstr ""
+msgstr "O último código não está marcado; desfaça e restaure essa codificação"
 
 #: src\qualcoder\information.py:273
 msgid ""
 "Create a grayed-out image with coloured coded highlights (Wait a few seconds)"
 msgstr ""
+"Crie uma imagem em tons de cinza com destaques codificados por cores "
+"(Aguarde alguns segundos)"
 
 #: src\qualcoder\information.py:274
 msgid "Zoom out"
-msgstr ""
+msgstr "Amenizar o zoom"
 
 #: src\qualcoder\information.py:275
 msgid "Zoom in"
-msgstr ""
+msgstr "Ampliar"
 
 #: src\qualcoder\information.py:276
 msgid "Right - click on image for menu to rotate image"
 msgstr ""
+"Clique com o botão direito do mouse na imagem para acessar o menu de rotação"
 
 #: src\qualcoder\information.py:279
 #, fuzzy
@@ -4158,11 +4170,13 @@ msgstr "Código por segmentos áudio/vídeo"
 
 #: src\qualcoder\information.py:286
 msgid "Annotate - for current selection"
-msgstr ""
+msgstr "Anotar - para a seleção atual"
 
 #: src\qualcoder\information.py:287
 msgid "Assign segment to currently selected code, and open memo for segment."
 msgstr ""
+"Atribuir o segmento ao código selecionado no momento e abrir a nota do "
+"segmento."
 
 #: src\qualcoder\information.py:288
 #, fuzzy
@@ -4181,27 +4195,29 @@ msgstr "Mostrar arquivos contendo texto"
 
 #: src\qualcoder\information.py:296
 msgid "Go forward 5 seconds."
-msgstr ""
+msgstr "Avance 5 segundos."
 
 #: src\qualcoder\information.py:297
 msgid "Restore last unmarked code(s) - text code(s) or segment code"
 msgstr ""
+"Restaurar o(s) último(s) código(s) não marcado(s) — código(s) de texto ou "
+"código de segmento"
 
 #: src\qualcoder\information.py:298
 msgid "Rewind 30 seconds"
-msgstr ""
+msgstr "Retroceda 30 segundos"
 
 #: src\qualcoder\information.py:301 src\qualcoder\information.py:302
 msgid "Play / pause.On start rewind slightly"
-msgstr ""
+msgstr "Reproduzir/pausar. Ao iniciar, retroceder um pouco"
 
 #: src\qualcoder\information.py:303
 msgid "Start and stop av segment creation"
-msgstr ""
+msgstr "Iniciar e interromper a criação do segmento AV"
 
 #: src\qualcoder\information.py:308
 msgid "Database Queries key shortcuts"
-msgstr ""
+msgstr "Atalhos de teclado para consultas em bancos de dados"
 
 #: src\qualcoder\information.py:309
 #, fuzzy
@@ -4364,7 +4380,7 @@ msgstr "Código renomeado de: "
 
 #: src\qualcoder\journals.py:956
 msgid "Skipping non-numeric value for attribute "
-msgstr ""
+msgstr "Ignorar valores não numéricos para o atributo "
 
 #: src\qualcoder\journals.py:965
 #, fuzzy
@@ -4688,7 +4704,7 @@ msgstr "Aviso"
 
 #: src\qualcoder\manage_files.py:1721
 msgid "Select at least one Qualitative Text column to analyse."
-msgstr ""
+msgstr "Selecione pelo menos uma coluna de texto qualitativo para analisar."
 
 #: src\qualcoder\manage_files.py:1843
 #, fuzzy

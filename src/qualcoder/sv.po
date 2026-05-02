@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-02 08:57+1000\n"
-"PO-Revision-Date: 2026-04-28 08:03+1000\n"
+"PO-Revision-Date: 2026-05-02 09:53+1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src\qualcoder\add_attribute.py:76
 msgid "This attribute name already exists in cases, files or journals."
@@ -3542,11 +3542,11 @@ msgstr ""
 
 #: src\qualcoder\information.py:172
 msgid "Menu key shortcuts"
-msgstr ""
+msgstr "Genvägar med menyknappen"
 
 #: src\qualcoder\information.py:173
 msgid "Menu shortcuts"
-msgstr ""
+msgstr "Menigenvägsval"
 
 #: src\qualcoder\information.py:173
 #, fuzzy
@@ -3555,7 +3555,7 @@ msgstr "Projektimport"
 
 #: src\qualcoder\information.py:174
 msgid "Files and Cases menu shortcuts"
-msgstr ""
+msgstr "Genvägar i menyn Filer och ärenden"
 
 #: src\qualcoder\information.py:175
 #, fuzzy
@@ -3574,7 +3574,7 @@ msgstr "Ta bort filer"
 
 #: src\qualcoder\information.py:178
 msgid "Open Files and Cases menu"
-msgstr ""
+msgstr "Öppna menyn Filer och ärenden"
 
 #: src\qualcoder\information.py:178
 #, fuzzy
@@ -3603,7 +3603,7 @@ msgstr "Ny journal"
 
 #: src\qualcoder\information.py:180
 msgid "Open Reports menu"
-msgstr ""
+msgstr "Öppna menyn Rapporter"
 
 #: src\qualcoder\information.py:180
 #, fuzzy
@@ -3627,19 +3627,19 @@ msgstr "Redigera referens"
 
 #: src\qualcoder\information.py:182
 msgid "Exit"
-msgstr ""
+msgstr "Avsluta"
 
 #: src\qualcoder\information.py:184
 msgid "Coding menu shortcuts"
-msgstr ""
+msgstr "Koda menygenvägar"
 
 #: src\qualcoder\information.py:184
 msgid "Reports menu shortcuts"
-msgstr ""
+msgstr "Genvägar till rapportmenyn"
 
 #: src\qualcoder\information.py:184
 msgid "Help menu shortcuts"
-msgstr ""
+msgstr "Genvägar i hjälpmenyn"
 
 #: src\qualcoder\information.py:185
 #, fuzzy
@@ -3653,7 +3653,7 @@ msgstr "Kodträd"
 
 #: src\qualcoder\information.py:185
 msgid "Help contents"
-msgstr ""
+msgstr "Hjälpinnehåll"
 
 #: src\qualcoder\information.py:186
 #, fuzzy
@@ -3725,7 +3725,7 @@ msgstr "Standardfrågor"
 
 #: src\qualcoder\information.py:196
 msgid "Manage menu key shortcuts"
-msgstr ""
+msgstr "Hantera kortkommandon för menyknappen"
 
 #: src\qualcoder\information.py:197 src\qualcoder\manage_files.py:2681
 #: src\qualcoder\manage_files.py:2683 src\qualcoder\view_charts.py:879
@@ -3754,7 +3754,7 @@ msgstr "Referens"
 
 #: src\qualcoder\information.py:199
 msgid "Help"
-msgstr ""
+msgstr "Hjälp"
 
 #: src\qualcoder\information.py:200 src\qualcoder\manage_references.py:236
 msgid "View file"
@@ -3869,23 +3869,23 @@ msgstr "Filer valda"
 
 #: src\qualcoder\information.py:213
 msgid "Manage files - view A/V shortcuts"
-msgstr ""
+msgstr "Hantera filer – visa genvägar till ljud- och videofiler"
 
 #: src\qualcoder\information.py:214
 msgid "Rewind 30 seconds."
-msgstr ""
+msgstr "Spola tillbaka 30 sekunder."
 
 #: src\qualcoder\information.py:215 src\qualcoder\information.py:299
 msgid "Rewind 5 seconds"
-msgstr ""
+msgstr "Spola tillbaka 5 sekunder"
 
 #: src\qualcoder\information.py:216 src\qualcoder\information.py:300
 msgid "Forward 30 seconds"
-msgstr ""
+msgstr "Spola fram 30 sekunder"
 
 #: src\qualcoder\information.py:217
 msgid "Start / pause.On start rewind slightly"
-msgstr ""
+msgstr "Start/paus. Vid start spolas det tillbaka något"
 
 #: src\qualcoder\information.py:218
 #, fuzzy
@@ -3894,28 +3894,28 @@ msgstr "Format för tidsstämpel"
 
 #: src\qualcoder\information.py:219
 msgid "Enter a new speakers name into shortcuts"
-msgstr ""
+msgstr "Ange ett nytt namn på högtalaren i genvägarna"
 
 #: src\qualcoder\information.py:220
 msgid "Delete speaker names from shortcuts"
-msgstr ""
+msgstr "Ta bort högtalarnas namn från genvägarna"
 
 #: src\qualcoder\information.py:221
 msgid "Insert speaker in format[speaker name]"
-msgstr ""
+msgstr "Ange talare i formatet [talares namn]"
 
 #: src\qualcoder\information.py:222 src\qualcoder\information.py:304
 msgid "Increase play rate"
-msgstr ""
+msgstr "Öka spelhastigheten"
 
 #: src\qualcoder\information.py:223 src\qualcoder\information.py:305
 msgid "Decrease play rate"
-msgstr ""
+msgstr "Minska spelhastigheten"
 
 #: src\qualcoder\information.py:224 src\qualcoder\information.py:262
 #: src\qualcoder\information.py:277 src\qualcoder\information.py:306
 msgid "When tree item selected - Rename code or category"
-msgstr ""
+msgstr "När ett trädobjekt är markerat – Byt namn på kod eller kategori"
 
 #: src\qualcoder\information.py:228
 #, fuzzy
@@ -3948,6 +3948,8 @@ msgstr "Välj kodad text"
 msgid ""
 "Show all codes in text ( if selected code previous or next has been used)"
 msgstr ""
+"Visa alla koder i texten (om den föregående eller nästa markerade koden har "
+"använts)"
 
 #: src\qualcoder\information.py:237 src\qualcoder\information.py:269
 #: src\qualcoder\information.py:284
@@ -3958,27 +3960,27 @@ msgstr "Visa kodningar markerade som viktiga"
 #: src\qualcoder\information.py:238 src\qualcoder\information.py:270
 #: src\qualcoder\information.py:285
 msgid "Help - opens in browser"
-msgstr ""
+msgstr "Hjälp – öppnas i webbläsaren"
 
 #: src\qualcoder\information.py:239
 msgid "Jump to search box"
-msgstr ""
+msgstr "Gå till sökrutan"
 
 #: src\qualcoder\information.py:240
 msgid "The last code that was unmarked, restore that coding"
-msgstr ""
+msgstr "Den senaste koden som inte var markerad – återställ den markeringen"
 
 #: src\qualcoder\information.py:241
 msgid "Enter and Exit Edit mode"
-msgstr ""
+msgstr "Gå in i och lämna redigeringsläget"
 
 #: src\qualcoder\information.py:242
 msgid "Annotate - Current text selection"
-msgstr ""
+msgstr "Kommentera – Aktuellt texturval"
 
 #: src\qualcoder\information.py:243 src\qualcoder\information.py:292
 msgid "Quick Mark with code - for current selection"
-msgstr ""
+msgstr "Snabbmärkning med kod – för det aktuella urvalet"
 
 #: src\qualcoder\information.py:244
 #, fuzzy
@@ -3987,7 +3989,7 @@ msgstr "Flytta kodningar efter klickad position"
 
 #: src\qualcoder\information.py:245
 msgid "Hide / Unhide top groupbox"
-msgstr ""
+msgstr "Dölj/visa den översta grupprutan"
 
 #: src\qualcoder\information.py:246
 #, fuzzy
@@ -3996,7 +3998,7 @@ msgstr "Flytta kodningar efter klickad position"
 
 #: src\qualcoder\information.py:247 src\qualcoder\information.py:289
 msgid "Show codes like (when text coding area is in focus)"
-msgstr ""
+msgstr "Visa koder som (när textkodningsområdet är markerat)"
 
 #: src\qualcoder\information.py:248 src\qualcoder\information.py:290
 #, fuzzy
@@ -4011,22 +4013,25 @@ msgstr "Inga kodare valda"
 #: src\qualcoder\information.py:250
 msgid "Shortcut to cycle through overlapping codes - at clicked position"
 msgstr ""
+"Genväg för att bläddra mellan överlappande koder – vid den plats där du "
+"klickar"
 
 #: src\qualcoder\information.py:251 src\qualcoder\information.py:293
 msgid "Search text - may include current selection"
-msgstr ""
+msgstr "Söktext – kan inkludera det markerade"
 
 #: src\qualcoder\information.py:252 src\qualcoder\information.py:294
 msgid "Opens a context menu for recently used codes for marking text"
 msgstr ""
+"Öppnar ett snabbmeny med de senast använda koderna för att markera text"
 
 #: src\qualcoder\information.py:253
 msgid "Reverse text direction: Left to Right | Right to Left"
-msgstr ""
+msgstr "Vänd textriktningen: Vänster till höger | Höger till vänster"
 
 #: src\qualcoder\information.py:254
 msgid "Unmark At clicked position in the text"
-msgstr ""
+msgstr "Ta bort markeringen vid den plats i texten där man klickade"
 
 #: src\qualcoder\information.py:255
 #, fuzzy
@@ -4035,29 +4040,31 @@ msgstr "Länka segment till markerad text"
 
 #: src\qualcoder\information.py:256
 msgid "Alt Left arrow.Shrink coding to the left"
-msgstr ""
+msgstr "Alternativ vänsterpil. Flytta koden åt vänster"
 
 #: src\qualcoder\information.py:257
 msgid "Alt Right arrow.Shrink coding to the right"
-msgstr ""
+msgstr "Högerpilen. Flytta koden åt höger"
 
 #: src\qualcoder\information.py:258
 msgid "Shift Left arrow.Extend coding to the left"
-msgstr ""
+msgstr "Vänsterpilen.Utöka kodningen åt vänster"
 
 #: src\qualcoder\information.py:259
 msgid "Shift Right arrow.Extend coding to the right"
-msgstr ""
+msgstr "Högerpilen.Förläng kodningen åt höger"
 
 #: src\qualcoder\information.py:260
 msgid "Describes clicked text character position"
-msgstr ""
+msgstr "Anger positionen för det text tecken som man har klickat på"
 
 #: src\qualcoder\information.py:261
 msgid ""
 "Shift all coding positions after a clicked position by X characters "
 "(negative numbers shift left)"
 msgstr ""
+"Flytta alla tecken efter den markerade positionen med X tecken (negativa tal "
+"innebär förskjutning åt vänster)"
 
 #: src\qualcoder\information.py:264
 #, fuzzy
@@ -4066,28 +4073,29 @@ msgstr "Kod efter bildområde solfjädersdiagram"
 
 #: src\qualcoder\information.py:271
 msgid "Show codes like (when coding area is in focus)"
-msgstr ""
+msgstr "Visa koder som (när kodningsområdet är aktivt)"
 
 #: src\qualcoder\information.py:272
 msgid "The last code is unmarked, undo and restore that coding"
-msgstr ""
+msgstr "Den sista koden är omarkerad; ångra och återställ den kodningen"
 
 #: src\qualcoder\information.py:273
 msgid ""
 "Create a grayed-out image with coloured coded highlights (Wait a few seconds)"
 msgstr ""
+"Skapa en gråtonad bild med färgkodade markeringar (Vänta några sekunder)"
 
 #: src\qualcoder\information.py:274
 msgid "Zoom out"
-msgstr ""
+msgstr "Zooma ut"
 
 #: src\qualcoder\information.py:275
 msgid "Zoom in"
-msgstr ""
+msgstr "Zooma in"
 
 #: src\qualcoder\information.py:276
 msgid "Right - click on image for menu to rotate image"
-msgstr ""
+msgstr "Högerklicka på bilden för att öppna menyn och rotera bilden"
 
 #: src\qualcoder\information.py:279
 #, fuzzy
@@ -4096,11 +4104,13 @@ msgstr "Kod efter ljud-/videosegment"
 
 #: src\qualcoder\information.py:286
 msgid "Annotate - for current selection"
-msgstr ""
+msgstr "Kommentera – för det markerade området"
 
 #: src\qualcoder\information.py:287
 msgid "Assign segment to currently selected code, and open memo for segment."
 msgstr ""
+"Tilldela segmentet till den aktuella markerade koden och öppna anteckningen "
+"för segmentet."
 
 #: src\qualcoder\information.py:288
 #, fuzzy
@@ -4119,27 +4129,27 @@ msgstr "Visa filer som innehåller text"
 
 #: src\qualcoder\information.py:296
 msgid "Go forward 5 seconds."
-msgstr ""
+msgstr "Spola fram 5 sekunder."
 
 #: src\qualcoder\information.py:297
 msgid "Restore last unmarked code(s) - text code(s) or segment code"
-msgstr ""
+msgstr "Återställ senaste omarkerade kod(er) – textkod(er) eller segmentkod"
 
 #: src\qualcoder\information.py:298
 msgid "Rewind 30 seconds"
-msgstr ""
+msgstr "Spola tillbaka 30 sekunder"
 
 #: src\qualcoder\information.py:301 src\qualcoder\information.py:302
 msgid "Play / pause.On start rewind slightly"
-msgstr ""
+msgstr "Spela upp/pausa. Spola tillbaka något vid start"
 
 #: src\qualcoder\information.py:303
 msgid "Start and stop av segment creation"
-msgstr ""
+msgstr "Starta och avsluta skapandet av ett segment"
 
 #: src\qualcoder\information.py:308
 msgid "Database Queries key shortcuts"
-msgstr ""
+msgstr "Genvägar för databasfrågor"
 
 #: src\qualcoder\information.py:309
 #, fuzzy
