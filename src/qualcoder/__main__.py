@@ -62,6 +62,7 @@ from qualcoder.GUI.base64_droidsansmono_helper import DroidSansMono
 from qualcoder.GUI.base64_notosans_helper import NotoSans
 from qualcoder.GUI.ui_main import Ui_MainWindow
 from qualcoder.helpers import get_default_user_directory, Message, ImportPlainTextCodes
+from qualcoder.workspace import CodesDock, StatusBarManager
 from qualcoder.import_survey import DialogImportSurvey
 from qualcoder.information import DialogInformation, menu_shortcuts_display, coding_shortcuts_display
 from qualcoder.information import manage_tab_info, coding_tab_info, reports_tab_info, render_tab_info_markdown
@@ -332,6 +333,13 @@ class MainWindow(QtWidgets.QMainWindow):
         font = f'font: {self.app.settings["fontsize"]}pt "{self.app.settings["font"]}";'
         self.setStyleSheet(font)
         self.init_ui()
+        # Dockable workspace: status bar (project + context) and locator palette.
+        self.status_bar = StatusBarManager(self)
+        self.codes_dock = CodesDock(self)
+        self.codes_dock.code_activated.connect(self._on_dock_code_activated)
+        self.addDockWidget(QtCore.Qt.DockWidgetArea.LeftDockWidgetArea, self.codes_dock)
+        self.codes_dock.hide()  # shown once a project is open
+        self._install_locator_shortcut()
         self.ui.tabWidget.setCurrentIndex(0)
         self.show()
         QtWidgets.QApplication.processEvents() 
@@ -799,9 +807,7 @@ Click "Yes" to start now.')
         self.ui.tabWidget.setCurrentIndex(0)
         self.last_non_ai_chat_tab = self.ui.tab_action_log
         self.ai_chat()
-
         self.refresh_placeholder_tab_content()
-
         # Add tab widget icons
         try:
             self.ui.tabWidget.setTabIcon(0, qta.icon('mdi6.cog', color=self.app.highlight_color()))  # Action Log
@@ -813,7 +819,39 @@ Click "Yes" to start now.')
             logger.log(e_)
         self._setup_ai_chat_tab_sidebar_button()
         self.update_ai_menu_options()
-        
+
+    def _install_locator_shortcut(self):
+        """Bind Ctrl+K to the locator/command palette in the status bar."""
+
+        shortcut = QtGui.QShortcut(QtGui.QKeySequence("Ctrl+K"), self)
+        shortcut.activated.connect(self._focus_locator)
+
+    def _focus_locator(self):
+        """Focus the locator and refresh its index against the open project."""
+
+        self.status_bar.locator.rebuild_index()
+        self.status_bar.locator.focus_locator()
+
+    def refresh_workspace(self):
+        """Refresh status bar context and rebuild the locator index.
+
+        Called after opening/closing a project and after coding changes so the
+        status bar counts and the locator stay current.
+        """
+
+        self.status_bar.refresh()
+        self.status_bar.locator.rebuild_index()
+        self.codes_dock.refresh()
+        if self.app.project_name:
+            self.codes_dock.show()
+        else:
+            self.codes_dock.hide()
+
+    def _on_dock_code_activated(self, code: dict):
+        """A code was double-clicked in the Codes dock: jump to the coding tab."""
+
+        self.ui.tabWidget.setCurrentWidget(self.ui.tab_coding)
+
     def fill_recent_projects_menu_actions(self):
         """ Get the recent projects from the .qualcoder txt file.
         Add up to five recent projects to the menu. """
@@ -2591,6 +2629,7 @@ Click "Yes" to start now.')
         self.project_summary_report()
         self.show_menu_options()
         self.external_mcp.sync_with_application_state()
+        self.refresh_workspace()
 
     def project_summary_report(self):
         """ Add a summary of the project to the text edit.
@@ -2705,6 +2744,7 @@ Click "Yes" to start now.')
         self.app.write_config_ini(self.app.settings, self.app.ai_models)
         self.ui.tabWidget.setCurrentWidget(self.ui.tab_action_log)
         self.ui.textEdit.verticalScrollBar().setValue(self.ui.textEdit.verticalScrollBar().maximum())
+        self.refresh_workspace()
 
     def delete_backup_folders(self) -> None:
         """ Delete the most current backup created on opening a project,
