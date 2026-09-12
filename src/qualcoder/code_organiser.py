@@ -1803,11 +1803,11 @@ class GraphicsScene(QtWidgets.QGraphicsScene):
         invisible on the dark themes, so use a light gray there (and on any native
         theme whose base colour is dark). """
         try:
-            sheet = self.parent.app.settings.get('stylesheet', 'original')
+            if self.parent.app.is_dark_theme():
+                return '#b0b0b0'
+            sheet = self.parent.app.resolved_stylesheet()
         except Exception:
             sheet = 'original'
-        if sheet in ('dark', 'rainbow'):
-            return '#b0b0b0'
         if sheet == 'native':
             try:
                 base = QtWidgets.QApplication.instance().palette().color(

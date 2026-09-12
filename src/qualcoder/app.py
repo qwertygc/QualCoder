@@ -39,6 +39,8 @@ import webbrowser
 import zipfile
 from copy import copy
 
+from qualcoder.themes import PALETTES, load_qss, native_tooltip_qss
+
 from qualcoder.ai_mcp_server import AiMcpServer
 from qualcoder.ai_llm import get_default_ai_models, update_ai_models
 from qualcoder.helpers import get_default_user_directory, Message
@@ -977,254 +979,219 @@ class App(object):
         return settings_data, ai_models
 
     def merge_settings_with_default_stylesheet(self, settings):
-        """ Stylesheet is coded to avoid potential data file import errors with pyinstaller.
-        Various options for colour schemes:
-        original, dark, blue, green, orange, purple, yellow, rainbow, native
+        """Build the application stylesheet from theme QSS files.
 
-        Orange #f89407
+        Supported schemes:
+          auto       follow the system light/dark colour scheme (Qt 6.5+)
+          light      modern light theme (default)
+          dark       modern dark theme
+          native     leave styling to the platform default
+          original, blue, green, orange, purple, yellow, rainbow
+                     legacy coloured variants built on the light theme (kept for
+                     backward compatibility with existing user settings)
 
-        Wild: QWidget {background: qlineargradient( x1:0 y1:0, x2:1 y2:0, stop:0 cyan, stop:1 blue);}
-        color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 rgba(0, 0, 0, 255),
-        stop:1 rgba(255, 255, 255, 255));
+        Stylesheets live in qualcoder.themes as .qss files rendered with a small
+        placeholder substitution so the colour palette has a single source of
+        truth. Orange #f89407 is the QualCoder accent colour.
         """
+        stylesheet_setting = settings.get('stylesheet', 'auto')
+        # Keep self.settings in sync so highlight_color / qtawesome helpers resolve
+        # the same scheme (they read self.settings['stylesheet']).
+        self.settings['stylesheet'] = stylesheet_setting
 
-        style_dark = "* {font-size: 12px; background-color: #2a2a2a; color:#eeeeee;}\n\
-        QWidget:focus {border: 2px solid #f89407;}\n\
-        QDialog {border: 1px solid #707070;}\n\
-        QFileDialog {font-size: 12px}\n\
-        QFileDialog QListView {font-size: 12px;}\n\
-        QFileDialog QAbstractItemView {font-size: 12px;}\n\
-        QCheckBox {border: None}\n\
-        QCheckBox::indicator {border: 2px solid #808080; background-color: #2a2a2a;}\n\
-        QCheckBox::indicator::checked {border: 2px solid #808080; background-color: orange;}\n\
-        QComboBox {border: 1px solid #707070;}\n\
-        QComboBox:hover {border: 2px solid #ffaa00;}\n\
-        QGroupBox {border: None;}\n\
-        QGroupBox:focus {border: 3px solid #ffaa00;}\n\
-        QHeaderView::section {background-color: #505050; color: #ffce42;}\n\
-        QLabel {border: none;}\n\
-        QLabel#label_search_regex {background-color:#858585;}\n\
-        QLabel#label_search_case_sensitive {background-color:#858585;}\n\
-        QLabel#label_search_all_files {background-color:#858585;}\n\
-        QLabel#label_font_size {background-color:#858585;}\n\
-        QLabel#label_search_all_journals {background-color:#858585;}\n\
-        QLabel#label_exports {background-color:#858585;}\n\
-        QLabel#label_time_3 {background-color:#858585;}\n\
-        QLabel#label_volume {background-color:#858585;}\n\
-        QLabel#ai_output {background-color: #2a2a2a;}\n\
-        QLabel:disabled {color: #707070;}\n\
-        QLineEdit {border: 1px solid #858585;}\n\
-        QListWidget::item:selected {border-left: 3px solid red; color: #eeeeee;}\n\
-        QMenuBar::item:selected {background-color: #3498db; }\n\
-        QMenu {border: 1px solid #858585;}\n\
-        QMenu::item:selected {background-color: #3498db;}\n\
-        QMenu::item:disabled {color: #707070;}\n\
-        QPushButton {background-color: #858585;}\n\
-        QPushButton:hover {border: 2px solid #ffaa00;}\n\
-        QRadioButton::indicator {border: 2px solid #858585; background-color: None;}\n\
-        QRadioButton::indicator::checked {border: 2px solid #858585; background-color: orange;}\n\
-        QSlider::handle:horizontal {background-color: #f89407;}\n\
-        QSplitter::handle {background-color: #909090;}\n\
-        QSplitter::handle:horizontal {width: 2px;}\n\
-        QSplitter::handle:vertical {height: 2px;}\n\
-        QSplitterHandle:hover {}\n\
-        QSplitter::handle:horizontal:hover {background-color: red;}\n\
-        QSplitter::handle:vertical:hover {background-color: red;}\n\
-        QSplitter::handle:pressed {background-color: red;}\n\
-        QTabBar {border: 2px solid #858585;}\n\
-        QTabBar::tab {border: 1px solid #858585; padding-left: 6px; padding-right: 6px;}\n\
-        QTabBar::tab:selected {border: 2px solid #858585; background-color: #707070; margin-left: 3px;}\n\
-        QTabBar::tab:!selected {border: 2px solid #858585; background-color: #2a2a2a; margin-left: 3px;}\n\
-        QTabWidget::pane {border: 1px solid #858585;}\n\
-        QTableWidget {border: 1px solid #ffaa00; gridline-color: #707070;}\n\
-        QTableWidget:focus {border: 3px solid #ffaa00;}\n\
-        QTextBrowser::document::link {color:red;}\n\
-        QTextEdit {border: 1px solid #ffaa00; selection-color: #000000; selection-background-color:#ffffff;}\n\
-        QTextEdit:focus {border: 2px solid #ffaa00;}\n\
-        QToolTip {background-color: #2a2a2a; color:#eeeeee; border: 1px solid #f89407; }\n\
-        QTreeWidget {font-size: 12px;}\n\
-        QTreeView {background-color: #484848}\n\
-        QTreeView::branch:selected {border-left: 2px solid red; color: #eeeeee;}"
-        style_dark = style_dark.replace("* {font-size: 12", f"* {{font-size: {settings.get('fontsize')}")
-        style_dark = style_dark.replace("QFileDialog {font-size: 12",
-                                        f"QFileDialog {{font-size: {settings.get('fontsize')}")
-        style_dark = style_dark.replace("QFileDialog QListView {font-size: 12",
-                                        f"QFileDialog QListView {{font-size: {settings.get('fontsize')}")
-        style_dark = style_dark.replace("QFileDialog QAbstractItemView {font-size: 12",
-                                        f"QFileDialog QAbstractItemView {{font-size: {settings.get('fontsize')}")
-        style_dark = style_dark.replace("QTreeWidget {font-size: 12",
-                                        f"QTreeWidget {{font-size: {settings.get('treefontsize')}")
-        style = "* {font-size: 12px; color: #000000;}\n\
-        QWidget {background-color: #efefef; color: #000000; border: none;}\n\
-        QWidget:focus {border: 1px solid #f89407;}\n\
-        QMainWindow {background-color: #efefef}\n\
-        QDialog {border: 1px solid #808080; background-color: #efefef;}\n\
-        QFileDialog {font-size: 12px;}\n\
-        QFileDialog QListView {font-size: 12px;}\n\
-        QFileDialog QAbstractItemView {font-size: 12px;}\n\
-        QComboBox {border: 1px solid #707070; background-color: #fafafa;}\n\
-        QComboBox:hover,QPushButton:hover {border: 2px solid #f89407;}\n\
-        QGroupBox {border-right: 1px solid #707070; border-bottom: 1px solid #707070; background-color: #efefef}\n\
-        QGroupBox:focus {border: 3px solid #f89407;}\n\
-        QPushButton {border-style: outset; border-width: 2px; border-radius: 2px; border-color: beige; padding: 2px;}\n\
-        QPushButton:pressed {border-style: inset; background-color: white;}\n\
-        QGraphicsView {border: 1px solid #808080}\n\
-        QHeaderView::section {background-color: #f9f9f9}\n\
-        QLineEdit {border: 1px solid #707070; background-color: #fafafa;}\n\
-        QListWidget::item:selected {border-left: 2px solid red; color: #000000;}\n\
-        QMenu {background-color: #efefef; border: 1px solid #808080;}\n\
-        QMenu::item:selected {background-color: #fafafa;}\n\
-        QMenu::item:disabled {background-color: #efefef; color: #707070;}\n\
-        QRadioButton{background-color: None;}\n\
-        QRadioButton::indicator {border: 2px solid #858585; background-color: None;}\n\
-        QRadioButton::indicator::checked {border: 2px solid #858585; background-color: efefef;}\n\
-        QSpinBox {border: 1px solid #808080;}\n\
-        QSplitter::handle {background-color: #808080;}\n\
-        QSplitter::handle:horizontal {width: 2px;}\n\
-        QSplitter::handle:vertical {height: 2px;}\n\
-        QSplitterHandle:hover {}\n\
-        QSplitter::handle:horizontal:hover {background-color: red;}\n\
-        QSplitter::handle:vertical:hover {background-color: red;}\n\
-        QSplitter::handle:pressed {background-color: red;}\n\
-        QTableWidget {border: 1px solid #f89407; gridline-color: #707070}\n\
-        QTableWidget:focus {border: 3px solid #f89407;}\n\
-        QTabBar {border: 2px solid #808080;}\n\
-        QTabBar::tab {background-color: #f9f9f9; border-top: #f9f9f9 4px solid; padding-left: 6px; padding-right: 6px;}\n\
-        QTabBar::tab:selected {background-color: #f9f9f9; border-top: 3px solid #f89407; border-bottom: 3px solid #f89407;}\n\
-        QTabWidget {background-color: #ffffff; border: none}\n\
-        QTextEdit {background-color: #fcfcfc; selection-color: #ffffff; selection-background-color:#000000;}\n\
-        QTextEdit:focus {border: 2px solid #f89407;}\n\
-        QPlainTextEdit {background-color: #fcfcfc; selection-color: #ffffff; selection-background-color:#000000;}\n\
-        QPlainTextEdit:focus {border: 2px solid #f89407;}\n\
-        QToolTip {background-color: #fffacd; color:#000000; border: 1px solid #f89407; }\n\
-        QTreeWidget {font-size: 12px;}\n\
-        QTreeView::branch:selected {border-left: 2px solid red; color: #000000;}"
-        style = style.replace("* {font-size: 12", f"* {{font-size: {settings.get('fontsize')}")
-        style = style.replace("QFileDialog {font-size: 12",
-                              f"QFileDialog {{font-size: {settings.get('fontsize')}")
-        style = style.replace("QFileDialog QListView {font-size: 12",
-                              f"QFileDialog QListView {{font-size: {settings.get('fontsize')}")
-        style = style.replace("QFileDialog QAbstractItemView {font-size: 12",
-                              f"QFileDialog QAbstractItemView {{font-size: {settings.get('fontsize')}")
-        style = style.replace("QTreeWidget {font-size: 12",
-                              f"QTreeWidget {{font-size: {settings.get('treefontsize')}")
+        font_size = settings.get('fontsize', 12)
+        tree_font_size = settings.get('treefontsize', 12)
+
         # Keep the active application palette and only override link colors.
         palette = QtWidgets.QApplication.instance().palette()
         palette.setColor(QtGui.QPalette.ColorRole.Link, QtGui.QColor(self.highlight_color()))
         palette.setColor(QtGui.QPalette.ColorRole.LinkVisited, QtGui.QColor(self.highlight_color()))
-        if self.settings['stylesheet'] == "native":
-            def blend_colors(first: QtGui.QColor, second: QtGui.QColor, first_ratio: float) -> QtGui.QColor:
-                second_ratio = 1.0 - first_ratio
-                return QtGui.QColor(
-                    round(first.red() * first_ratio + second.red() * second_ratio),
-                    round(first.green() * first_ratio + second.green() * second_ratio),
-                    round(first.blue() * first_ratio + second.blue() * second_ratio)
-                )
-
-            active_highlight = palette.color(QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.Highlight)
-            active_highlighted_text = palette.color(
-                QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.HighlightedText)
-            inactive_base = palette.color(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.Base)
-            inactive_highlight = blend_colors(active_highlight, inactive_base, 0.55)
-            palette.setColor(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.Highlight,
-                             inactive_highlight)
-            palette.setColor(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.HighlightedText,
-                             active_highlighted_text)
-            if platform.system() == "Darwin":
-                native_dark = False
-                try:
-                    native_dark = QtGui.QGuiApplication.styleHints().colorScheme() == QtCore.Qt.ColorScheme.Dark
-                except AttributeError:
-                    native_dark = palette.color(QtGui.QPalette.ColorRole.Window).lightness() < 128
-                tooltip_background = QtGui.QColor("#2b2b2b" if native_dark else "#f7f7f7")
-                tooltip_text = QtGui.QColor("#ffffff" if native_dark else "#000000")
-                tooltip_base_role = getattr(
-                    QtGui.QPalette.ColorRole, "ToolTipBase", QtGui.QPalette.ColorRole.Base)
-                tooltip_text_role = getattr(
-                    QtGui.QPalette.ColorRole, "ToolTipText", QtGui.QPalette.ColorRole.Text)
-                for color_group in (
-                        QtGui.QPalette.ColorGroup.Active,
-                        QtGui.QPalette.ColorGroup.Inactive,
-                        QtGui.QPalette.ColorGroup.Disabled,
-                ):
-                    palette.setColor(color_group, tooltip_base_role, tooltip_background)
-                    palette.setColor(color_group, tooltip_text_role, tooltip_text)
-                QtWidgets.QToolTip.setPalette(palette)
+        if stylesheet_setting == "native":
+            self._apply_native_palette_tweaks(palette)
         QtWidgets.QApplication.instance().setPalette(palette)
-        if self.settings['stylesheet'] == 'dark':
-            return style_dark
-        style_rainbow = style_dark
-        if self.settings['stylesheet'] == 'original':
-            # Force dark button foregrounds so qtawesome icons remain readable on the light button background.
-            style = style.replace("QPushButton {border-style: outset; ",
-                                  "QPushButton {border-style: outset; background-color: #dddddd; color: #202020; ")
-            style += "\nQToolButton {color: #202020;}"
-        if self.settings['stylesheet'] == 'rainbow':
-            style_rainbow += "\nQDialog {background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0.2 black, " \
-                             "stop:0.27 red, stop:0.31 yellow, stop:0.35 green, stop:0.39 #306eff, stop:0.42 blue, " \
-                             "stop:0.45 darkMagenta, stop:0.5 black);}"
-            style_rainbow += "\nQFrame#line {background-color: none;}"
-            style_rainbow += "\nQFrame#line_2 {background-color: none;}"
-            style_rainbow += "\nQFrame#line_3 {background-color: none;}"
-            style_rainbow += "\nQFrame#line_4 {background-color: none;}"
-            style_rainbow += "\nQSlider {background-color: none;}"
-            style_rainbow += "\nQGroupBox {background-color: none;}"
-            return style_rainbow
-        if self.settings['stylesheet'] == "orange":
-            style = style.replace("#efefef", "#ffcba4")
-            style = style.replace("#f89407", "#306eff")
-        if self.settings['stylesheet'] == "yellow":
-            style = style.replace("#efefef", "#f9e79f")
-        if self.settings['stylesheet'] == "green":
-            style = style.replace("#efefef", "#c8e6c9")
-            style = style.replace("#f89407", "#ea202c")
-        if self.settings['stylesheet'] == "blue":
-            style = style.replace("#efefef", "#cbe9fa")
-            style = style.replace("#f89407", "#303f9f")
-        if self.settings['stylesheet'] == "purple":
-            style = style.replace("#efefef", "#dfe2ff")
-            style = style.replace("#f89407", "#ca1b9a")
-        if self.settings['stylesheet'] == "native":
-            style = "* {font-size: 12px;}"
+
+        # Resolve the effective light/dark base for QSS-based themes.
+        if stylesheet_setting in ('auto', 'light', 'dark'):
+            base_name = self._resolved_theme_name(stylesheet_setting)
+            return load_qss(base_name, font_size, tree_font_size)
+
+        if stylesheet_setting == 'native':
+            style = "* {font-size: %spx;}" % font_size
             style += "\nQGroupBox { border: none; background-color: transparent;}"
-            if platform.system() == "Darwin":
-                native_dark = False
-                try:
-                    native_dark = QtGui.QGuiApplication.styleHints().colorScheme() == QtCore.Qt.ColorScheme.Dark
-                except AttributeError:
-                    palette = QtWidgets.QApplication.instance().palette()
-                    native_dark = palette.color(QtGui.QPalette.ColorRole.Window).lightness() < 128
-                if native_dark:
-                    style += "\nQToolTip {background-color: #2b2b2b; color: #ffffff; border: 1px solid #5f5f5f;}"
-                else:
-                    style += "\nQToolTip {background-color: #f7f7f7; color: #000000; border: 1px solid #bdbdbd;}"
-        ''' # Keep this as a test area for parsable / unparsable style sheet lines
-        style_lines = style.split("\n")
-        for i, sl in enumerate(style_lines):
-            print(i + 1, sl)
-        style_lines = style_lines[0:15]  # Test bed for parsing
-        style = "\n".join(style_lines)
-        print("\nSTYLE\n", style)'''
+            style += native_tooltip_qss()
+            return style
+
+        # Legacy coloured variants: start from the light QSS with an overridden
+        # palette so they benefit from the modernised spacing and controls.
+        return self._legacy_coloured_qss(stylesheet_setting, font_size, tree_font_size)
+
+    def _resolved_theme_name(self, stylesheet_setting):
+        """Map a QSS-based setting to 'light' or 'dark'.
+
+        For 'auto', inspect the system colour scheme (Qt 6.5+); fall back to the
+        palette window lightness when the colour-scheme hint is unavailable.
+        """
+
+        if stylesheet_setting == 'light':
+            return 'light'
+        if stylesheet_setting == 'dark':
+            return 'dark'
+        # auto
+        try:
+            scheme = QtGui.QGuiApplication.styleHints().colorScheme()
+            if scheme == QtCore.Qt.ColorScheme.Dark:
+                return 'dark'
+            if scheme == QtCore.Qt.ColorScheme.Light:
+                return 'light'
+        except AttributeError:
+            pass
+        palette = QtWidgets.QApplication.instance().palette()
+        if palette.color(QtGui.QPalette.ColorRole.Window).lightness() < 128:
+            return 'dark'
+        return 'light'
+
+    def _apply_native_palette_tweaks(self, palette):
+        """Tweak the native palette so inactive selection and tooltips read well."""
+
+        def blend_colors(first, second, first_ratio):
+            second_ratio = 1.0 - first_ratio
+            return QtGui.QColor(
+                round(first.red() * first_ratio + second.red() * second_ratio),
+                round(first.green() * first_ratio + second.green() * second_ratio),
+                round(first.blue() * first_ratio + second.blue() * second_ratio)
+            )
+
+        active_highlight = palette.color(
+            QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.Highlight)
+        active_highlighted_text = palette.color(
+            QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.HighlightedText)
+        inactive_base = palette.color(
+            QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.Base)
+        inactive_highlight = blend_colors(active_highlight, inactive_base, 0.55)
+        palette.setColor(
+            QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.Highlight,
+            inactive_highlight)
+        palette.setColor(
+            QtGui.QPalette.ColorGroup.Inactive,
+            QtGui.QPalette.ColorRole.HighlightedText,
+            active_highlighted_text)
+        if platform.system() == "Darwin":
+            native_dark = False
+            try:
+                native_dark = (
+                    QtGui.QGuiApplication.styleHints().colorScheme()
+                    == QtCore.Qt.ColorScheme.Dark)
+            except AttributeError:
+                native_dark = (
+                    palette.color(QtGui.QPalette.ColorRole.Window).lightness() < 128)
+            tooltip_background = QtGui.QColor("#2b2b2b" if native_dark else "#f7f7f7")
+            tooltip_text = QtGui.QColor("#ffffff" if native_dark else "#000000")
+            tooltip_base_role = getattr(
+                QtGui.QPalette.ColorRole, "ToolTipBase", QtGui.QPalette.ColorRole.Base)
+            tooltip_text_role = getattr(
+                QtGui.QPalette.ColorRole, "ToolTipText", QtGui.QPalette.ColorRole.Text)
+            for color_group in (
+                    QtGui.QPalette.ColorGroup.Active,
+                    QtGui.QPalette.ColorGroup.Inactive,
+                    QtGui.QPalette.ColorGroup.Disabled):
+                palette.setColor(color_group, tooltip_base_role, tooltip_background)
+                palette.setColor(color_group, tooltip_text_role, tooltip_text)
+            QtWidgets.QToolTip.setPalette(palette)
+
+    def _legacy_coloured_qss(self, stylesheet_setting, font_size, tree_font_size):
+        """Return a QSS for the legacy coloured variants, built on the light theme."""
+
+        palette = dict(PALETTES['light'])
+        # original keeps the default light palette.
+        if stylesheet_setting == "orange":
+            palette['bg'] = "#ffcba4"
+            palette['bg_window'] = "#ffcba4"
+            palette['accent'] = "#306eff"
+            palette['button_hover'] = "#306eff"
+        elif stylesheet_setting == "yellow":
+            palette['bg'] = "#f9e79f"
+            palette['bg_window'] = "#f9e79f"
+        elif stylesheet_setting == "green":
+            palette['bg'] = "#c8e6c9"
+            palette['bg_window'] = "#c8e6c9"
+            palette['accent'] = "#ea202c"
+            palette['button_hover'] = "#ea202c"
+        elif stylesheet_setting == "blue":
+            palette['bg'] = "#cbe9fa"
+            palette['bg_window'] = "#cbe9fa"
+            palette['accent'] = "#303f9f"
+            palette['button_hover'] = "#303f9f"
+        elif stylesheet_setting == "purple":
+            palette['bg'] = "#dfe2ff"
+            palette['bg_window'] = "#dfe2ff"
+            palette['accent'] = "#ca1b9a"
+            palette['button_hover'] = "#ca1b9a"
+
+        from qualcoder.themes import _substitute
+        path = Path(__file__).resolve().parent / "themes" / "light.qss"
+        qss = path.read_text(encoding="utf-8")
+        style = _substitute(qss, palette, font_size, tree_font_size)
+
+        if stylesheet_setting == "original":
+            # Keep qtawesome icons readable on the light button background.
+            style += "\nQToolButton {color: #202020;}"
+
+        if stylesheet_setting == "rainbow":
+            style += (
+                "\nQDialog {background: qlineargradient(x1:0, y1:0, x2:1, y2:1,"
+                " stop:0.2 black, stop:0.27 red, stop:0.31 yellow, stop:0.35 green,"
+                " stop:0.39 #306eff, stop:0.42 blue, stop:0.45 darkMagenta,"
+                " stop:0.5 black);}")
+            style += "\nQFrame#line {background-color: none;}"
+            style += "\nQFrame#line_2 {background-color: none;}"
+            style += "\nQFrame#line_3 {background-color: none;}"
+            style += "\nQFrame#line_4 {background-color: none;}"
+            style += "\nQSlider {background-color: none;}"
+            style += "\nQGroupBox {background-color: none;}"
         return style
+
+    def is_dark_theme(self):
+        """Return True when the effective theme renders a dark UI.
+
+        The 'auto' setting is resolved to light/dark from the system colour scheme;
+        the explicit 'dark' and 'rainbow' settings are dark; everything else is
+        treated as light. Centralises the scattered ``in ('dark', 'rainbow')`` and
+        ``== 'dark'`` checks so they stay consistent with the resolved auto theme.
+        """
+
+        return self.resolved_stylesheet() in ('dark', 'rainbow')
+
+    def resolved_stylesheet(self):
+        """Return the effective stylesheet name after resolving 'auto'.
+
+        Useful for helpers that branch on the literal stylesheet name (e.g. waveform
+        colour) so the 'auto' setting behaves like its resolved light/dark value.
+        """
+
+        stylesheet = self.settings['stylesheet']
+        if stylesheet == 'auto':
+            return self._resolved_theme_name('auto')
+        return stylesheet
 
     def highlight_color(self):
         """ Get the default highlight color, depending on the current style
         """
-        if self.settings['stylesheet'] == 'dark':
+        stylesheet = self.settings['stylesheet']
+        if stylesheet == 'auto':
+            stylesheet = self._resolved_theme_name('auto')
+        if stylesheet in ('dark', 'light', 'rainbow', 'original'):
             return '#f89407'
-        if self.settings['stylesheet'] == 'rainbow':
-            return '#f89407'
-        if self.settings['stylesheet'] == "orange":
+        if stylesheet == "orange":
             return "#306eff"
-        if self.settings['stylesheet'] == "yellow":
+        if stylesheet == "yellow":
             return "#306eff"
-        if self.settings['stylesheet'] == "green":
+        if stylesheet == "green":
             return "#ea202c"
-        if self.settings['stylesheet'] == "blue":
+        if stylesheet == "blue":
             return "#303f9f"
-        if self.settings['stylesheet'] == "purple":
+        if stylesheet == "purple":
             return "#ca1b9a"
-        if self.settings['stylesheet'] == "native":
+        if stylesheet == "native":
             palette = QtWidgets.QApplication.instance().palette()
             color_role = QtGui.QPalette.ColorRole.Highlight
             if platform.system() == "Darwin":
@@ -1239,6 +1206,8 @@ class App(object):
     def qtawesome_icon_color(self):
         """Get the default qtawesome icon color for the current QualCoder style."""
         stylesheet = self.settings['stylesheet']
+        if stylesheet == 'auto':
+            stylesheet = self._resolved_theme_name('auto')
         if stylesheet in ('dark', 'rainbow'):
             return QtGui.QColor('#eeeeee')
         if stylesheet == 'native':
@@ -1249,6 +1218,8 @@ class App(object):
     def qtawesome_icon_color_disabled(self):
         """Get the default disabled qtawesome icon color for the current QualCoder style."""
         stylesheet = self.settings['stylesheet']
+        if stylesheet == 'auto':
+            stylesheet = self._resolved_theme_name('auto')
         if stylesheet in ('dark', 'rainbow'):
             return QtGui.QColor('#707070')
         if stylesheet == 'native':
@@ -1274,7 +1245,7 @@ class App(object):
         if result['speakernameformat'] == 0:
             result['speakernameformat'] = "[]"
         if result['stylesheet'] == 0:
-            result['stylesheet'] = "native"
+            result['stylesheet'] = "auto"
         return result, ai_models
 
     @property
@@ -1364,7 +1335,7 @@ class App(object):
             'dialogreportcodefrequencies_tree_widths': '',
             'dialogreportcodercomparisons_tree_widths': '',
             'dialogcodecolorscheme_tree_widths': '',
-            'stylesheet': 'native',
+            'stylesheet': 'auto',
             'report_text_context_chars': 150,
             'report_text_context-style': 'Bold',
             'ai_enable': 'False',

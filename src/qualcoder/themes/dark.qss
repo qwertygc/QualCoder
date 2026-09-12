@@ -1,0 +1,90 @@
+/* QualCoder dark theme.
+   Placeholders {{name}} are substituted from qualcoder.themes.PALETTES. */
+
+* {font-size: {{font_size}}px; background-color: {{bg}}; color: {{text}};}
+QWidget:focus {border: 2px solid {{accent}};}
+QDialog {border: 1px solid {{border}}; border-radius: 6px;}
+QFileDialog {font-size: {{font_size}}px;}
+QFileDialog QListView {font-size: {{font_size}}px;}
+QFileDialog QAbstractItemView {font-size: {{font_size}}px;}
+
+QCheckBox {border: None;}
+QCheckBox::indicator {border: 2px solid {{border}}; background-color: {{bg}}; border-radius: 4px;}
+QCheckBox::indicator::checked {border: 2px solid {{accent}}; background-color: {{accent}};}
+
+QComboBox {border: 1px solid {{border}}; border-radius: 6px; padding: 4px;}
+QComboBox:hover {border: 2px solid {{button_hover}};}
+
+QGroupBox {border: 1px solid {{border_subtle}}; border-radius: 6px; margin-top: 10px; padding: 10px;}
+QGroupBox:focus {border: 2px solid {{accent}};}
+
+QHeaderView::section {background-color: {{header_bg}}; color: {{header_text}}; border: none; border-right: 1px solid {{border_subtle}}; padding: 4px;}
+
+QLabel {border: none;}
+QLabel#label_search_regex {background-color: {{bg_alternate}};}
+QLabel#label_search_case_sensitive {background-color: {{bg_alternate}};}
+QLabel#label_search_all_files {background-color: {{bg_alternate}};}
+QLabel#label_font_size {background-color: {{bg_alternate}};}
+QLabel#label_search_all_journals {background-color: {{bg_alternate}};}
+QLabel#label_exports {background-color: {{bg_alternate}};}
+QLabel#label_time_3 {background-color: {{bg_alternate}};}
+QLabel#label_volume {background-color: {{bg_alternate}};}
+QLabel#ai_output {background-color: {{bg}};}
+QLabel:disabled {color: {{text_disabled}};}
+
+QLineEdit {border: 1px solid {{border_subtle}}; background-color: {{bg}}; border-radius: 6px; padding: 4px;}
+QLineEdit:focus {border: 2px solid {{accent}};}
+
+QListWidget::item:selected {border-left: 3px solid {{accent}}; color: {{text}};}
+QListWidget::item:hover {background-color: {{bg_alternate}};}
+
+QMenuBar::item:selected {background-color: {{accent}}; color: {{accent_text}};}
+QMenu {background-color: {{bg}}; border: 1px solid {{border_subtle}}; border-radius: 6px; padding: 4px;}
+QMenu::item {padding: 6px 18px; border-radius: 4px;}
+QMenu::item:selected {background-color: {{bg_alternate}};}
+QMenu::item:disabled {color: {{text_disabled}};}
+QMenuSeparator {height: 1px; background: {{border_subtle}}; margin: 4px 8px;}
+
+QPushButton {background-color: {{button_bg}}; border: 1px solid {{border_subtle}}; border-radius: 6px; padding: 6px 12px;}
+QPushButton:hover {border: 2px solid {{button_hover}};}
+QPushButton:pressed {background-color: {{bg_alternate}};}
+QPushButton:disabled {color: {{text_disabled}};}
+
+QRadioButton::indicator {border: 2px solid {{border}}; background-color: None; border-radius: 8px;}
+QRadioButton::indicator::checked {border: 2px solid {{accent}}; background-color: {{accent}};}
+
+QSlider::handle:horizontal {background-color: {{accent}}; border-radius: 6px;}
+QSlider::groove:horizontal {background-color: {{border_subtle}}; height: 4px; border-radius: 2px;}
+
+QSplitter::handle {background-color: {{splitter}};}
+QSplitter::handle:horizontal {width: 4px;}
+QSplitter::handle:vertical {height: 4px;}
+QSplitter::handle:horizontal:hover {background-color: {{accent}};}
+QSplitter::handle:vertical:hover {background-color: {{accent}};}
+QSplitter::handle:pressed {background-color: {{accent}};}
+
+QTabBar {border: none; background: transparent;}
+QTabBar::tab {background-color: transparent; border: none; border-bottom: 3px solid transparent; padding: 8px 14px; margin: 0 2px;}
+QTabBar::tab:selected {border-bottom: 3px solid {{accent}}; color: {{text}};}
+QTabBar::tab:!selected {color: {{text_disabled}};}
+QTabBar::tab:hover:!selected {color: {{text}};}
+QTabWidget::pane {border: 1px solid {{border_subtle}};}
+QTabWidget {border: none;}
+
+QTableWidget {border: 1px solid {{accent}}; gridline-color: {{border_subtle}}; border-radius: 6px;}
+QTableWidget:focus {border: 2px solid {{accent}};}
+
+QTextBrowser::document::link {color: {{accent}};}
+QTextEdit {background-color: {{bg}}; border: 1px solid {{border_subtle}}; border-radius: 6px; selection-color: {{selection}}; selection-background-color: {{selection_bg}};}
+QTextEdit:focus {border: 2px solid {{accent}};}
+QPlainTextEdit {background-color: {{bg}}; border: 1px solid {{border_subtle}}; border-radius: 6px; selection-color: {{selection}}; selection-background-color: {{selection_bg}};}
+QPlainTextEdit:focus {border: 2px solid {{accent}};}
+
+QToolTip {background-color: {{tooltip_bg}}; color: {{text}}; border: 1px solid {{tooltip_border}}; border-radius: 4px; padding: 4px;}
+
+QTreeWidget {font-size: {{tree_font_size}}px; border: none;}
+QTreeView {background-color: {{bg_alternate}};}
+QTreeView::item {padding: 3px;}
+QTreeView::item:selected {background-color: {{bg_alternate}}; border-left: 3px solid {{accent}}; color: {{text}};}
+QTreeView::item:hover {background-color: {{bg_alternate}};}
+QTreeView::branch:selected {border-left: 3px solid {{accent}}; color: {{text}};}
