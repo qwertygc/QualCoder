@@ -44,6 +44,24 @@ class TestThemes(TestCase):
         snippet = native_tooltip_qss()
         self.assertIn("QToolTip", snippet)
 
+    def test_primary_button_styled(self):
+        """The primary (default-property) button is filled with the accent."""
+        for name in ("light", "dark"):
+            qss = load_qss(name, 12, 12)
+            self.assertIn('QPushButton[default="true"]', qss)
+            self.assertIn(PALETTES[name]["accent"], qss.split('QPushButton[default="true"]')[1].split('}')[0])
+
+    def test_thin_scrollbars_styled(self):
+        for name in ("light", "dark"):
+            qss = load_qss(name, 12, 12)
+            self.assertIn("QScrollBar:vertical", qss)
+            self.assertIn("QScrollBar::handle", qss)
+
+    def test_palettes_define_new_keys(self):
+        for name in ("light", "dark"):
+            for key in ("accent_hover", "card_bg", "scrollbar", "scrollbar_hover"):
+                self.assertIn(key, PALETTES[name])
+
     @staticmethod
     def _assert_no_placeholders(rendered: str) -> None:
         no_comments = re.sub(r"/\*.*?\*/", "", rendered, flags=re.DOTALL)
