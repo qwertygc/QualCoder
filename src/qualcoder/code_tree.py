@@ -33,11 +33,12 @@ from PyQt6.QtGui import QBrush, QColor
 
 #from .__main__ import App
 from .add_item_name import DialogAddItemName
-from .color_selector import DialogColorSelect, colors, TextColor
+from .color_selector import DialogColorSelect, colors
 from .confirm_delete import DialogConfirmDelete
 from .helpers import Message, restore_persistent_tree_widths
 from .memo import DialogMemo
 from .select_items import DialogSelectItems
+from .tree_delegates import ColorChipDelegate, CountBadgeDelegate
 
 logger = logging.getLogger(__name__)
 
@@ -76,6 +77,11 @@ class CodeTreeController(QtCore.QObject):
         self.app = app
         self.tree = tree_widget
         self.host = host
+        # Presentational delegates: a colour chip on the Name column and a
+        # rounded frequency badge on the Count column. Purely visual; they read
+        # the existing item data (background colour / count text) set elsewhere.
+        self.tree.setItemDelegateForColumn(0, ColorChipDelegate(self.tree))
+        self.tree.setItemDelegateForColumn(3, CountBadgeDelegate(self.app, self.tree))
         self.tree_sort_option = "all asc"  # all asc, all desc, cat and code asc
         self.column_width_factors = column_width_factors if column_width_factors is not None \
             else {0: 0.70, 2: 0.15, 3: 0.15}
@@ -198,8 +204,9 @@ class CodeTreeController(QtCore.QObject):
             if len(code_dict['name']) > 52:
                 code_item.setText(0, f"{code_dict['name'][:25]}..{code_dict['name'][-25:]}")
                 code_item.setToolTip(0, code_dict['name'])
+            # Store the code colour on the background role for the colour-chip delegate;
+            # the row itself is no longer tinted so text stays readable on every theme.
             code_item.setBackground(0, QBrush(QColor(code_dict['color']), Qt.BrushStyle.SolidPattern))
-            code_item.setForeground(0, QBrush(QColor(TextColor(code_dict['color']).recommendation)))
             code_item.setFlags(
                 Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsUserCheckable |
                 Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsDragEnabled |

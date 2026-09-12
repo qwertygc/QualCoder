@@ -1121,14 +1121,14 @@ class DialogCases(QtWidgets.QDialog):
 
         format_reg = QtGui.QTextCharFormat()
         brush = QtGui.QBrush(QtGui.QColor(QtCore.Qt.GlobalColor.black))
-        if self.app.settings['stylesheet'] in ('dark', 'rainbow'):
+        if self.app.is_dark_theme():
             brush = QtGui.QBrush(QtGui.QColor("#eeeeee"))
         format_reg.setForeground(brush)
 
         format_bold = QtGui.QTextCharFormat()
         format_bold.setFontWeight(QtGui.QFont.Weight.Bold)
         brush_bold = QtGui.QBrush(QtGui.QColor(QtCore.Qt.GlobalColor.black))
-        if self.app.settings['stylesheet'] in ('dark', 'rainbow'):
+        if self.app.is_dark_theme():
             brush_bold = QtGui.QBrush(QtGui.QColor("#eeeeee"))
         format_bold.setForeground(brush_bold)
 
