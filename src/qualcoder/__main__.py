@@ -299,7 +299,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.project = {"databaseversion": "", "date": "", "memo": "", "about": ""}
         self.recent_projects = []  # a list of recent projects for the qmenu
 
-        if platform.system() == "Windows" and self.app.settings['stylesheet'] == "native":
+        if platform.system() == "Windows" and self.app.settings['stylesheet'] in ("native", "system"):
             # Make 'Fusion' the standard native style on Windows https://www.qt.io/blog/dark-mode-on-windows-11-with-qt-6.5
             # The default 'Windows' style seems partially broken at the moment, in combination with the native dark mode.
             # On macOS, 'Fusion' is the default style anyways (automatically chosen by Qt).
@@ -316,7 +316,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.init_placeholder_tab_layouts()
         # Test of macOS menu bar
-        if self.app.settings['stylesheet'] == "native":
+        if self.app.settings['stylesheet'] in ("native", "system"):
             self.ui.menubar.setNativeMenuBar(True)
         else:
             self.ui.menubar.setNativeMenuBar(False)
@@ -330,6 +330,9 @@ class MainWindow(QtWidgets.QMainWindow):
             pass
         self.hide_menu_options()
         font = f'font: {self.app.settings["fontsize"]}pt "{self.app.settings["font"]}";'
+        if self.app.settings['stylesheet'] in ("native", "system"):
+            # OS-integrated: keep the system font family, only honour the chosen size.
+            font = f'font-size: {self.app.settings["fontsize"]}pt;'
         self.setStyleSheet(font)
         self.init_ui()
         self.ui.tabWidget.setCurrentIndex(0)
@@ -2061,6 +2064,8 @@ Click "Yes" to start now.')
         self.external_mcp.sync_with_application_state()
         self.settings_report(swith_to_action_log=False)
         font = f'font: {self.app.settings["fontsize"]}pt "{self.app.settings["font"]}";'
+        if self.app.settings['stylesheet'] in ("native", "system"):
+            font = f'font-size: {self.app.settings["fontsize"]}pt;'
         self.setStyleSheet(font)
         self.update_placeholder_tab_styles()
         self.ai_chat_window.init_styles()
@@ -2918,7 +2923,7 @@ def gui():
     if sys.platform in ["linux", "bsd"]: 
         QtWidgets.QApplication.setDesktopFileName("QualCoder")
         
-    if platform.system() == "Windows" and settings.get('stylesheet') == "native":
+    if platform.system() == "Windows" and settings.get('stylesheet') in ("native", "system"):
         # Avoid early native Windows style initialization crashes in Qt before our later Fusion fallback runs.
         os.environ.setdefault("QT_STYLE_OVERRIDE", "Fusion")
     # Native video frame must not force sibling widgets native
@@ -2933,6 +2938,19 @@ def gui():
     install_droid_sans_mono()
     stylesheet = qual_app.merge_settings_with_default_stylesheet(settings)
     app.setStyleSheet(stylesheet)
+
+    # OS-integrated: re-apply the (minimal) stylesheet and re-tint icons when the
+    # system light/dark scheme changes, so QualCoder follows the OS live.
+    def _on_color_scheme_changed(*_args):
+        if qual_app.resolved_stylesheet() == 'system':
+            app.setStyleSheet(qual_app.merge_settings_with_default_stylesheet(qual_app.settings))
+            qta.reset_cache()
+
+    try:
+        app.styleHints().colorSchemeChanged.connect(_on_color_scheme_changed)
+    except AttributeError:
+        pass  # Qt < 6.5 has no colorSchemeChanged signal
+
     qta.reset_cache()
     qta.set_defaults(
         color=qual_app.qtawesome_icon_color,

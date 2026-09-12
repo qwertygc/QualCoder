@@ -4820,7 +4820,7 @@ class DialogCodeText(QtWidgets.QWidget):
         cursor = self.ui.plainTextEdit.textCursor()
         fmt = QtGui.QTextCharFormat()
         fmt.setUnderlineStyle(QtGui.QTextCharFormat.UnderlineStyle.SingleUnderline)
-        if self.app.settings['stylesheet'] == 'dark':
+        if self.app.is_dark_theme():
             fmt.setUnderlineColor(QColor("#000000"))
         else:
             fmt.setUnderlineColor(QColor("#FFFFFF"))
@@ -4947,7 +4947,7 @@ class DialogCodeText(QtWidgets.QWidget):
         for o in overlaps:
             fmt = QtGui.QTextCharFormat()
             fmt.setUnderlineStyle(QtGui.QTextCharFormat.UnderlineStyle.SingleUnderline)
-            if self.app.settings['stylesheet'] == 'dark':
+            if self.app.is_dark_theme():
                 fmt.setUnderlineColor(QColor("#000000"))
             else:
                 fmt.setUnderlineColor(QColor("#FFFFFF"))

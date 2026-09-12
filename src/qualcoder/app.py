@@ -1112,7 +1112,7 @@ class App(object):
         palette = QtWidgets.QApplication.instance().palette()
         palette.setColor(QtGui.QPalette.ColorRole.Link, QtGui.QColor(self.highlight_color()))
         palette.setColor(QtGui.QPalette.ColorRole.LinkVisited, QtGui.QColor(self.highlight_color()))
-        if self.settings['stylesheet'] == "native":
+        if self.settings['stylesheet'] in ("native", "system"):
             def blend_colors(first: QtGui.QColor, second: QtGui.QColor, first_ratio: float) -> QtGui.QColor:
                 second_ratio = 1.0 - first_ratio
                 return QtGui.QColor(
@@ -1153,6 +1153,9 @@ class App(object):
         QtWidgets.QApplication.instance().setPalette(palette)
         if self.settings['stylesheet'] == 'dark':
             return style_dark
+        if self.settings['stylesheet'] == 'system':
+            # OS-integrated: no custom QSS, only minimal corrections are applied below.
+            style = ""
         style_rainbow = style_dark
         if self.settings['stylesheet'] == 'original':
             # Force dark button foregrounds so qtawesome icons remain readable on the light button background.
@@ -1184,9 +1187,21 @@ class App(object):
         if self.settings['stylesheet'] == "purple":
             style = style.replace("#efefef", "#dfe2ff")
             style = style.replace("#f89407", "#ca1b9a")
-        if self.settings['stylesheet'] == "native":
-            style = "* {font-size: 12px;}"
+        if self.settings['stylesheet'] in ("native", "system"):
+            # OS-integrated: let the platform style draw everything. Apply only the
+            # user's chosen font size and a couple of minimal, non-invasive fixes so
+            # QualCoder-specific widgets (e.g. coloured search labels) stay legible.
+            style = f"* {{font-size: {settings.get('fontsize')}px;}}"
+            style += f"\nQTreeWidget {{font-size: {settings.get('treefontsize')}px;}}"
             style += "\nQGroupBox { border: none; background-color: transparent;}"
+            style += "\nQLabel#label_search_regex {background-color: palette(alternate-base);}"
+            style += "\nQLabel#label_search_case_sensitive {background-color: palette(alternate-base);}"
+            style += "\nQLabel#label_search_all_files {background-color: palette(alternate-base);}"
+            style += "\nQLabel#label_font_size {background-color: palette(alternate-base);}"
+            style += "\nQLabel#label_search_all_journals {background-color: palette(alternate-base);}"
+            style += "\nQLabel#label_exports {background-color: palette(alternate-base);}"
+            style += "\nQLabel#label_time_3 {background-color: palette(alternate-base);}"
+            style += "\nQLabel#label_volume {background-color: palette(alternate-base);}"
             if platform.system() == "Darwin":
                 native_dark = False
                 try:
@@ -1207,24 +1222,59 @@ class App(object):
         print("\nSTYLE\n", style)'''
         return style
 
+    def is_dark_theme(self) -> bool:
+        """True when the effective theme renders on a dark background.
+
+        For OS-integrated styles (``system`` / ``native``) this follows the
+        platform color scheme (Qt 6.5+) or falls back to the window palette
+        lightness, so QualCoder adapts to the OS light/dark setting.
+        """
+        stylesheet = self.resolved_stylesheet()
+        if stylesheet in ('dark', 'rainbow'):
+            return True
+        if stylesheet in ('system', 'native'):
+            try:
+                scheme = QtGui.QGuiApplication.styleHints().colorScheme()
+                if scheme == QtCore.Qt.ColorScheme.Dark:
+                    return True
+                if scheme == QtCore.Qt.ColorScheme.Light:
+                    return False
+            except AttributeError:
+                pass
+            palette = QtWidgets.QApplication.instance().palette()
+            return palette.color(QtGui.QPalette.ColorRole.Window).lightness() < 128
+        return False
+
+    def resolved_stylesheet(self) -> str:
+        """Return the effective stylesheet name, resolving ``system``/``native``.
+
+        ``system`` and ``native`` are both OS-integrated; this keeps the legacy
+        ``native`` value working for existing config.ini files.
+        """
+        stylesheet = self.settings.get('stylesheet', 'system')
+        if stylesheet in ('system', 'native', 0):
+            return 'system'
+        return stylesheet
+
     def highlight_color(self):
         """ Get the default highlight color, depending on the current style
         """
-        if self.settings['stylesheet'] == 'dark':
+        stylesheet = self.settings['stylesheet']
+        if stylesheet == 'dark':
             return '#f89407'
-        if self.settings['stylesheet'] == 'rainbow':
+        if stylesheet == 'rainbow':
             return '#f89407'
-        if self.settings['stylesheet'] == "orange":
+        if stylesheet == "orange":
             return "#306eff"
-        if self.settings['stylesheet'] == "yellow":
+        if stylesheet == "yellow":
             return "#306eff"
-        if self.settings['stylesheet'] == "green":
+        if stylesheet == "green":
             return "#ea202c"
-        if self.settings['stylesheet'] == "blue":
+        if stylesheet == "blue":
             return "#303f9f"
-        if self.settings['stylesheet'] == "purple":
+        if stylesheet == "purple":
             return "#ca1b9a"
-        if self.settings['stylesheet'] == "native":
+        if stylesheet in ("native", "system"):
             palette = QtWidgets.QApplication.instance().palette()
             color_role = QtGui.QPalette.ColorRole.Highlight
             if platform.system() == "Darwin":
@@ -1241,7 +1291,7 @@ class App(object):
         stylesheet = self.settings['stylesheet']
         if stylesheet in ('dark', 'rainbow'):
             return QtGui.QColor('#eeeeee')
-        if stylesheet == 'native':
+        if stylesheet in ('native', 'system'):
             palette = QtWidgets.QApplication.instance().palette()
             return palette.color(QtGui.QPalette.ColorRole.Text)
         return QtGui.QColor('#202020')
@@ -1251,7 +1301,7 @@ class App(object):
         stylesheet = self.settings['stylesheet']
         if stylesheet in ('dark', 'rainbow'):
             return QtGui.QColor('#707070')
-        if stylesheet == 'native':
+        if stylesheet in ('native', 'system'):
             palette = QtWidgets.QApplication.instance().palette()
             return palette.color(QtGui.QPalette.ColorGroup.Disabled, QtGui.QPalette.ColorRole.Text)
         return QtGui.QColor('#7a7a7a')
@@ -1274,7 +1324,7 @@ class App(object):
         if result['speakernameformat'] == 0:
             result['speakernameformat'] = "[]"
         if result['stylesheet'] == 0:
-            result['stylesheet'] = "native"
+            result['stylesheet'] = "system"
         return result, ai_models
 
     @property
@@ -1364,7 +1414,7 @@ class App(object):
             'dialogreportcodefrequencies_tree_widths': '',
             'dialogreportcodercomparisons_tree_widths': '',
             'dialogcodecolorscheme_tree_widths': '',
-            'stylesheet': 'native',
+            'stylesheet': 'system',
             'report_text_context_chars': 150,
             'report_text_context-style': 'Bold',
             'ai_enable': 'False',

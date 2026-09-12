@@ -1800,22 +1800,14 @@ class GraphicsScene(QtWidgets.QGraphicsScene):
 
     def _link_color(self):
         """ theme-aware hierarchy line colour. The default gray is nearly
-        invisible on the dark themes, so use a light gray there (and on any native
-        theme whose base colour is dark). """
+        invisible on the dark themes, so use a light gray there (and on any
+        theme whose base colour is dark, including the OS-integrated system
+        theme when the OS is in dark mode). """
         try:
-            sheet = self.parent.app.settings.get('stylesheet', 'original')
+            if self.parent.app.is_dark_theme():
+                return '#b0b0b0'
         except Exception:
-            sheet = 'original'
-        if sheet in ('dark', 'rainbow'):
-            return '#b0b0b0'
-        if sheet == 'native':
-            try:
-                base = QtWidgets.QApplication.instance().palette().color(
-                    QtGui.QPalette.ColorRole.Base)
-                if base.lightness() < 128:
-                    return '#b0b0b0'
-            except Exception:
-                pass
+            pass
         return '#555555'
 
     def set_width(self, width):
