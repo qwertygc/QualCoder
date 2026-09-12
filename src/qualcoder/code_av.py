@@ -2627,7 +2627,7 @@ class DialogCodeAV(QtWidgets.QDialog):
         sb.set_waveform_pixmap(None)
         sb.set_no_waveform_message(_("Generating waveform..."))
         thread = generate_waveform_png_async(self._waveform_media_abs_path(), waveform_path,
-                                             waveform_colour(self.app.settings['stylesheet']))
+                                             waveform_colour('dark' if self.app.is_dark_theme() else self.app.resolved_stylesheet()))
         file_id = self.file_['id']
         timer = QtCore.QTimer(self)
         timer.setInterval(300)
@@ -3915,7 +3915,7 @@ class DialogCodeAV(QtWidgets.QDialog):
         for overlap in overlaps:
             fmt = QtGui.QTextCharFormat()
             fmt.setFontUnderline(True)
-            if self.app.settings['stylesheet'] == 'dark':
+            if self.app.is_dark_theme():
                 fmt.setUnderlineColor(QColor("#000000"))
             else:
                 fmt.setUnderlineColor(QColor("#FFFFFF"))

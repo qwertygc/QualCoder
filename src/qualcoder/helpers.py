@@ -1252,7 +1252,7 @@ class MarkdownHighlighter(QtGui.QSyntaxHighlighter):
         ul_format = QtGui.QTextCharFormat()
         ul_format.setUnderlineStyle(QtGui.QTextCharFormat.SingleUnderline)
         brush = QtGui.QBrush(QtCore.Qt.GlobalColor.darkBlue, QtCore.Qt.BrushStyle.SolidPattern)
-        if self.app.settings['stylesheet'] in ('dark', 'rainbow'):  
+        if self.app.is_dark_theme():  
             brush = QtGui.QBrush(QtGui.QColor("#00BFFF"), QtCore.Qt.BrushStyle.SolidPattern)
         ul_format.setForeground(brush)
         # HTTP HTTPS protocol

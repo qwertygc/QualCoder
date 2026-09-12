@@ -1523,18 +1523,7 @@ class DialogAIChat(QtWidgets.QDialog):
         dark_colors = ("#A5D6FF", "#4EC9B0", "#B5B5B5")
 
         stylesheet = self.app.settings["stylesheet"]
-        use_dark_colors = stylesheet in ("dark", "rainbow")
-        if stylesheet == "native":
-            try:
-                use_dark_colors = (
-                    QGuiApplication.styleHints().colorScheme()
-                    == QtCore.Qt.ColorScheme.Dark
-                )
-            except AttributeError as exception:
-                print(f"Using an older PyQt6 version? {exception}")
-                logger.debug(
-                    "Could not determine the native color scheme: %s", exception
-                )
+        use_dark_colors = self.app.is_dark_theme()
 
         (
             self.ai_response_color,
@@ -1580,7 +1569,7 @@ class DialogAIChat(QtWidgets.QDialog):
         default_panel_color = self.ui.widget_chat.palette().color(self.ui.widget_chat.backgroundRole())
         combo_background_color = default_panel_color.name()
         combo_text_color = self.ui.widget_chat.palette().color(QPalette.ColorRole.WindowText).name()
-        if self.app.settings['stylesheet'] not in ('dark', 'rainbow', 'native'):
+        if self.app.resolved_stylesheet() not in ('system', 'dark', 'rainbow'):
             combo_background_color = "#fafafa"
             combo_text_color = "#000000"
         combo_style = f"""

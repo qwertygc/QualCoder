@@ -74,7 +74,7 @@ class DialogSQL(QtWidgets.QDialog):
         self.ui.tableWidget_results.setStyleSheet(doc_font)
         self.ui.treeWidget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         highlighter = Highlighter(self.ui.textEdit_sql)
-        if self.app.settings['stylesheet'] in ("dark", "rainbow"):
+        if self.app.is_dark_theme():
             highlighter.create_rules(dark=True)
         self.ui.textEdit_sql.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.ui.textEdit_sql.customContextMenuRequested.connect(self.sql_menu)
