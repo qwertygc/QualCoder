@@ -71,6 +71,12 @@ QTabBar::tab:hover:!selected {color: {{text}};}
 QTabWidget::pane {border: 1px solid {{border_subtle}};}
 QTabWidget {border: none;}
 
+/* Vertical icon rail for the main workspaces (QTabWidget#tabWidget, West). */
+#tabWidget QTabBar::tab {border: none; border-left: 3px solid transparent; padding: 14px 10px; min-width: 96px; max-width: 120px;}
+#tabWidget QTabBar::tab:selected {border-bottom: none; border-left: 3px solid {{accent}}; background-color: {{bg_alternate}};}
+#tabWidget QTabBar::tab:hover:!selected {border-left: 3px solid {{border}}; background-color: {{bg_alternate}};}
+#tabWidget QTabWidget::pane {border: none;}
+
 QTableWidget {border: 1px solid {{accent}}; gridline-color: {{border_subtle}}; border-radius: 6px;}
 QTableWidget:focus {border: 2px solid {{accent}};}
 

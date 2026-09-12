@@ -61,6 +61,7 @@ from qualcoder.codebook import Codebook
 from qualcoder.GUI.base64_droidsansmono_helper import DroidSansMono
 from qualcoder.GUI.base64_notosans_helper import NotoSans
 from qualcoder.GUI.ui_main import Ui_MainWindow
+from qualcoder.home_panel import HomePanel
 from qualcoder.helpers import get_default_user_directory, Message, ImportPlainTextCodes
 from qualcoder.import_survey import DialogImportSurvey
 from qualcoder.information import DialogInformation, menu_shortcuts_display, coding_shortcuts_display
@@ -794,6 +795,7 @@ Click "Yes" to start now.')
         self.ui.splitter.setCollapsible(1, False)
         self.ui.sidebar.setMinimumWidth(0)
         self.ui.splitter.splitterMoved.connect(self.on_main_splitter_moved)
+        self._install_home_panel()
         self.settings_report()
         
         self.ui.tabWidget.setCurrentIndex(0)
@@ -813,6 +815,7 @@ Click "Yes" to start now.')
             logger.log(e_)
         self._setup_ai_chat_tab_sidebar_button()
         self.update_ai_menu_options()
+        self._setup_sidebar_navigation()
         
     def fill_recent_projects_menu_actions(self):
         """ Get the recent projects from the .qualcoder txt file.
@@ -1597,6 +1600,78 @@ Click "Yes" to start now.')
         if not self.ui.tabWidget.isTabVisible(index):
             return
         self.last_non_ai_chat_tab = widget
+
+    def _install_home_panel(self):
+        """Insert a modern landing panel above the Action Log on startup.
+
+        The Action Log tab keeps its QTextEdit (used everywhere as the log sink),
+        but gains a HomePanel above it with quick-action cards and recent
+        projects. The existing QGridLayout is reused: the panel is added on a new
+        row and the log stretches below it.
+        """
+
+        try:
+            tab = self.ui.tab_action_log
+            grid = tab.layout()
+            if grid is None:
+                grid = QtWidgets.QGridLayout(tab)
+            text_edit = self.ui.textEdit
+            # Move the existing log into row 1 (stretch) and add the panel in row 0.
+            grid.removeWidget(text_edit)
+            self.home_panel = HomePanel(self.app, tab)
+            grid.addWidget(self.home_panel, 0, 0)
+            grid.addWidget(text_edit, 1, 0)
+            grid.setRowStretch(0, 0)
+            grid.setRowStretch(1, 1)
+            self.home_panel.set_action(
+                'mdi6.folder-plus', _('New project'),
+                _('Create a new QualCoder project'), self.new_project)
+            self.home_panel.set_action(
+                'mdi6.folder-open', _('Open project'),
+                _('Open an existing project'), self.open_project)
+            self.home_panel.set_action(
+                'mdi6.cog', _('Settings'),
+                _('Application settings'), self.change_settings)
+            self.home_panel.set_action(
+                'mdi6.help-circle-outline', _('Help'),
+                _('Open the documentation'), self.help)
+            self.home_panel.add_spacer()
+        except Exception as err:
+            logger.debug("Could not install home panel: %s", err)
+
+    def _setup_sidebar_navigation(self):
+        """Render the main workspaces as a vertical icon rail on the left.
+
+        Switching the central QTabWidget to the West position turns the old
+        horizontal tab bar into a modern sidebar of icons + labels, freeing up
+        vertical space for content and giving the application a contemporary
+        silhouette (like VS Code / Qt Creator). The rail width and styling are
+        driven by the theme stylesheet.
+        """
+
+        try:
+            self.ui.tabWidget.setTabPosition(QtWidgets.QTabWidget.TabPosition.West)
+            bar = self.ui.tabWidget.tabBar()
+            bar.setExpanding(False)
+            # Keep icon-only compactness optional: labels are kept for discoverability.
+            bar.setIconSize(QtCore.QSize(20, 20))
+            # Re-apply icons so they pick up the resolved theme accent.
+            accent = self.app.highlight_color()
+            icons = [
+                ('mdi6.view-dashboard-outline', 'mdi6.view-dashboard'),
+                ('mdi6.file-outline', 'mdi6.file'),
+                ('mdi6.tag-text-outline', 'mdi6.tag-text'),
+                ('mdi6.format-list-group', 'mdi6.format-list-group'),
+                ('mdi6.message-processing-outline', 'mdi6.message-processing'),
+            ]
+            for index, (icon_name, _fallback) in enumerate(icons):
+                try:
+                    self.ui.tabWidget.setTabIcon(
+                        index, qta.icon(icon_name, color=accent))
+                except Exception as err:
+                    logger.debug("Could not set sidebar icon %s: %s", icon_name, err)
+        except Exception as err:
+            logger.debug("Could not enable sidebar navigation: %s", err)
 
     def get_tab_after_ai_chat_sidebar_switch(self):
         """Choose which main tab to show when AI chat moves into the sidebar."""
@@ -2665,6 +2740,17 @@ Click "Yes" to start now.')
         self.ui.textEdit.append(msg)
         self.ui.tabWidget.setCurrentWidget(self.ui.tab_action_log)
         self.ui.textEdit.verticalScrollBar().setValue(self.ui.textEdit.verticalScrollBar().maximum())
+        self._refresh_home()
+
+    def _refresh_home(self):
+        """Refresh the startup home panel (recent projects) when available."""
+
+        panel = getattr(self, "home_panel", None)
+        if panel is not None:
+            try:
+                panel.refresh()
+            except Exception as err:
+                logger.debug("Could not refresh home panel: %s", err)
 
     def close_project(self):
         """ Close an open project.
@@ -2705,6 +2791,7 @@ Click "Yes" to start now.')
         self.app.write_config_ini(self.app.settings, self.app.ai_models)
         self.ui.tabWidget.setCurrentWidget(self.ui.tab_action_log)
         self.ui.textEdit.verticalScrollBar().setValue(self.ui.textEdit.verticalScrollBar().maximum())
+        self._refresh_home()
 
     def delete_backup_folders(self) -> None:
         """ Delete the most current backup created on opening a project,

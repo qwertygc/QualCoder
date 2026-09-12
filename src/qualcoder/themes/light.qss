@@ -80,6 +80,12 @@ QTabBar::tab:hover:!selected {color: {{text}};}
 QTabWidget::pane {border: none; border-top: 1px solid {{border_subtle}};}
 QTabWidget {background-color: {{bg}}; border: none;}
 
+/* Vertical icon rail for the main workspaces (QTabWidget#tabWidget, West). */
+#tabWidget QTabBar::tab {border: none; border-left: 3px solid transparent; padding: 14px 10px; min-width: 96px; max-width: 120px;}
+#tabWidget QTabBar::tab:selected {border-bottom: none; border-left: 3px solid {{accent}}; background-color: {{bg_alternate}};}
+#tabWidget QTabBar::tab:hover:!selected {border-left: 3px solid {{border}}; background-color: {{bg_alternate}};}
+#tabWidget QTabWidget::pane {border: none;}
+
 QTextEdit {background-color: {{bg_text}}; selection-color: {{selection}}; selection-background-color: {{selection_bg}}; border-radius: 6px; border: 1px solid {{border_subtle}};}
 QTextEdit:focus {border: 2px solid {{accent}};}
 QPlainTextEdit {background-color: {{bg_text}}; selection-color: {{selection}}; selection-background-color: {{selection_bg}}; border-radius: 6px; border: 1px solid {{border_subtle}};}
