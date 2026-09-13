@@ -40,8 +40,76 @@
         <attribute name="title">
          <string>Action Log</string>
         </attribute>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_action_log">
+         <item>
+          <widget class="QFrame" name="action_log_button_bar">
+           <property name="frameShape">
+            <enum>QFrame::Shape::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Plain</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_action_log">
+            <property name="contentsMargins">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>0</width>
+              <height>0</height>
+             </rect>
+            </property>
+            <item>
+             <widget class="QPushButton" name="pushButton_new_project">
+              <property name="text">
+               <string>Create New Project</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_open_project">
+              <property name="text">
+               <string>Open Project</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_project_memo">
+              <property name="text">
+               <string>Project Memo</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_settings">
+              <property name="text">
+               <string>Settings</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_help">
+              <property name="text">
+               <string>Contents</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_action_log">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
           <widget class="QTextEdit" name="textEdit"/>
          </item>
         </layout>

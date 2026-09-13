@@ -790,6 +790,7 @@ Click "Yes" to start now.')
         # Ensure the action_log always scrolls to the very bottom once new log entries are added:
         self.ui.textEdit.verticalScrollBar().rangeChanged.connect(self.action_log_scroll_bottom)
         self.ui.textEdit.setReadOnly(True)
+        self.setup_action_log_buttons()
         self.ui.splitter.setChildrenCollapsible(False)
         self.ui.splitter.setCollapsible(1, False)
         self.ui.sidebar.setMinimumWidth(0)
@@ -1163,6 +1164,25 @@ Click "Yes" to start now.')
     def action_log_scroll_bottom(self):
         """Scrolls the action log to the very bottom, malking new entries visible."""
         self.ui.textEdit.verticalScrollBar().setValue(self.ui.textEdit.verticalScrollBar().maximum())
+
+    def setup_action_log_buttons(self):
+        """Wire the action log quick-access buttons to the corresponding menu actions."""
+
+        buttons = [
+            (self.ui.pushButton_new_project, self.ui.actionCreate_New_Project),
+            (self.ui.pushButton_open_project, self.ui.actionOpen_Project),
+            (self.ui.pushButton_project_memo, self.ui.actionProject_Memo),
+            (self.ui.pushButton_settings, self.ui.actionSettings),
+            (self.ui.pushButton_help, self.ui.actionContents),
+        ]
+        for button, action in buttons:
+            if button is None or action is None:
+                continue
+            button.clicked.connect(action.trigger)
+            try:
+                button.setIcon(qta.icon('mdi.cursor-default-click-outline', color=self.app.highlight_color()))
+            except Exception as e_:
+                logger.log(e_)
 
     def about(self):
         """ About dialog. """
