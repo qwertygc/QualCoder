@@ -1909,7 +1909,6 @@ class ViewCharts(QDialog):
         y_labels = []
         for c in codes:
             y_labels.append(c['name'])
-        category = self.ui.comboBox_category.currentText()
         self.ui.lineEdit_filter.setText("")
         self.ui.comboBox_case.setCurrentIndex(0)
         self.ui.comboBox_file.setCurrentIndex(0)

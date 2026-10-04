@@ -129,7 +129,7 @@ class DialogJournals(QtWidgets.QDialog):
         self.ui.textEdit.customContextMenuRequested.connect(self.text_edit_menu)
         self.ui.textEdit.setTabChangesFocus(True)
         # spell = SpellChecker()  # Was testing this out Dont use
-        highlighter = MarkdownHighlighter(self.ui.textEdit, self.app)
+        MarkdownHighlighter(self.ui.textEdit, self.app)
         self.ui.tableWidget.setTabKeyNavigation(False)
 
         self.ui.tableWidget.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.CustomContextMenu)
@@ -402,7 +402,6 @@ class DialogJournals(QtWidgets.QDialog):
             # Regex Protocol optional
             regex_no_protocol = QtCore.QRegularExpression(r"www\.[a-zA-Z0-9()]{1,63}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)")
             matches = []
-            all_matches = []
             text = self.ui.textEdit.toPlainText()
             iterator = regex_http.globalMatch(text)
             while iterator.hasNext():

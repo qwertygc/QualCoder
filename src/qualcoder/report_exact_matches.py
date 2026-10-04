@@ -170,8 +170,6 @@ class DialogReportExactTextMatches(QtWidgets.QDialog):
         cur = self.app.conn.cursor()
         sql = "select length(fulltext), mediapath from source where id=?"
         sql_text_codings = "select count(cid) from code_text where fid=?"
-        sql_av_codings = "select count(cid) from code_av where id=?"
-        sql_image_codings = "select count(cid) from code_image where id=?"
         for f in self.files:
             cur.execute(sql, [f['id'], ])
             res = cur.fetchone()

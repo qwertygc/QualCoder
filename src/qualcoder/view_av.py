@@ -812,7 +812,6 @@ class DialogViewAV(QtWidgets.QDialog):
 
         action = menu.exec(self.ddialog.mapToGlobal(position))
         if action == action_screenshot:
-            filename = f'Frame_{datetime.datetime.now().astimezone().strftime("%Y%m%d_%H_%M_%S")}.jpg'
             hms = msecs_to_hours_mins_secs(self.mediaplayer.get_time())
             image_name = f"{self.file_['name']}_{hms}.png"
             exp_directory = ExportDirectoryPathDialog(self.app, image_name)
@@ -1691,7 +1690,7 @@ class DialogViewAV(QtWidgets.QDialog):
         txt = self.ui.comboBox_tracks.currentText()
         if txt == "":
             txt = 1
-        success = self.mediaplayer.audio_set_track(int(txt))
+        self.mediaplayer.audio_set_track(int(txt))
 
     def play_pause(self):
         """ Toggle play or pause status. """
