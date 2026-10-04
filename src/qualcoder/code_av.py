@@ -2743,7 +2743,7 @@ class DialogCodeAV(QtWidgets.QDialog):
         txt = self.ui.comboBox_tracks.currentText()
         if txt == "":
             txt = 1
-        success = self.mediaplayer.audio_set_track(int(txt))
+        self.mediaplayer.audio_set_track(int(txt))
 
     def _revive_update_timer(self):
         """ Watchdog: revive a dead update timer while media plays. """
@@ -5273,7 +5273,7 @@ class SegmentGraphicsItem(QtWidgets.QGraphicsLineItem):
         action_add_code = menu.addAction(_('Add selected code to segment'))
         action_export = None
         try:
-            result = subprocess.run(['ffmpeg', '-version'], capture_output=True, text=True).stdout
+            subprocess.run(['ffmpeg', '-version'], capture_output=True, text=True)
             action_export = menu.addAction(_('Export segment to file'))
         except Exception as e_:
             print(f"Cannot find ffmpeg {e_}")

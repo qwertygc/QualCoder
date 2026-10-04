@@ -227,7 +227,6 @@ class CodeOrganiser(QDialog):
         """
 
         codes, categories = self.app.get_codes_categories()
-        code_name_equals_category_name = False
         for code in codes:
             code['original_cid'] = code['cid']
             code['original_catid'] = code['catid']
@@ -1735,7 +1734,7 @@ class CodeOrganiser(QDialog):
         for ct in ct_res:
             try:
                 cur.execute("update code_text set cid=? where ctid=?", [new_cid, ct[0]])
-            except sqlite3.IntegrityError as e_:
+            except sqlite3.IntegrityError:
                 # print(ct, e_)
                 cur.execute("delete from code_text where ctid=?", [ct[0]])
         av_sql = "select avid from code_av where cid=?"
@@ -1744,7 +1743,7 @@ class CodeOrganiser(QDialog):
         for av in av_res:
             try:
                 cur.execute("update code_av set cid=? where avid=?", [new_cid, av[0]])
-            except sqlite3.IntegrityError as e_:
+            except sqlite3.IntegrityError:
                 # print(e_)
                 cur.execute("delete from code_av where avid=?", [av[0]])
         img_sql = "select imid from code_image where cid=?"
@@ -1753,7 +1752,7 @@ class CodeOrganiser(QDialog):
         for img in img_res:
             try:
                 cur.execute("update code_image set cid=? where imid=?", [new_cid, img[0]])
-            except sqlite3.IntegrityError as e_:
+            except sqlite3.IntegrityError:
                 # print(e_)
                 cur.execute("delete from code_image where imid=?", [img[0]])
         cur.execute("delete from code_name where cid=?", [old_cid, ])

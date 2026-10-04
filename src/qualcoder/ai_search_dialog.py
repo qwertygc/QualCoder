@@ -623,8 +623,6 @@ class DialogAiSearch(QtWidgets.QDialog):
         cur = self.app.conn.cursor()
         sql = "select length(fulltext), mediapath from source where id=?"
         sql_text_codings = "select count(cid) from code_text_visible where fid=?"
-        sql_av_codings = "select count(cid) from code_av_visible where id=?"  # Not used
-        sql_image_codings = "select count(cid) from code_image_visible where id=?"  # Not used
         item = QtWidgets.QListWidgetItem(_("<no file filter>"))
         item.setToolTip(_("Search in all textfiles"))
         item.setData(Qt.ItemDataRole.UserRole, -1)

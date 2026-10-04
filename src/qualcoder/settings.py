@@ -41,7 +41,6 @@ from .ai_llm import (
 )
 from .ai_runtime import ai_runtime_ready, show_ai_runtime_not_ready
 from .coder_names import DialogCoderNames
-from .confirm_delete import DialogConfirmDelete
 from .GUI.ui_dialog_settings import Ui_Dialog_settings
 from .helpers import get_default_user_directory, Message
 

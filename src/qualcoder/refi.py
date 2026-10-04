@@ -1560,7 +1560,6 @@ class RefiImport:
             self.parent_textedit.append(_("Cannot read from TextSource: ") + f"{source_path}\n{err}")
 
         if path_type == "relative":
-            media_path = f"/docs/{name}"  # Note not used
             # Copy file into .qda documents folder and rename into original name
             destination = Path(self.app.project_path) / "documents" / name
             try:

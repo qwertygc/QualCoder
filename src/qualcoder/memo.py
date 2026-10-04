@@ -115,7 +115,7 @@ class DialogMemo(QtWidgets.QDialog):
         else:
             self.ui.pushButton_insert_coded_segment.pressed.connect(self.insert_quote)
             self.ui.pushButton_insert_reference.pressed.connect(self.insert_reference)
-        highlighter = MarkdownHighlighter(self.ui.textEdit, self.app)
+        MarkdownHighlighter(self.ui.textEdit, self.app)
 
     def clear_contents(self):
         """ Clear all text """
