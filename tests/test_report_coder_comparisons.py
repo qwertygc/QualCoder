@@ -112,6 +112,18 @@ class TestCalculateAgreementForCode(unittest.TestCase):
         total = self.dialog.calculate_agreement_for_code(1)
         self.assertEqual(total["characters"], 10)
 
+    def test_code_not_applied_in_subcorpus_shows_na_not_zerodiv(self):
+        cur = self.conn.cursor()
+        cur.execute("INSERT INTO code_text (ctid, cid, fid, seltext, pos0, pos1, owner, date, memo, avid, important) "
+                    "VALUES (5, 2, 2, 'bbbbb', 0, 5, 'coderA', 'd', '', NULL, NULL)")
+        self.conn.commit()
+        self.dialog.selected_file_ids = [1]
+        total = self.dialog.calculate_agreement_for_code(2)
+        self.assertNotIn("zerodiv", str(total))
+        self.assertNotIn("zero div", str(total))
+        self.assertEqual(total["kappa"], "n/a")
+        self.assertEqual(total["agreement"], 100.0)
+
 
 if __name__ == "__main__":
     unittest.main()

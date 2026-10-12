@@ -1119,13 +1119,13 @@ class DialogReportCoderComparisons(QtWidgets.QDialog):
             try:
                 total['agree_coded_only'] = round(100 * total['dual_coded'] / (total['dual_coded'] + total['single_coded']), 2)
             except ZeroDivisionError:
-                total['agree_coded_only'] = "zero div"
+                total['agree_coded_only'] = "n/a"
         else:
-            total['agreement'] = "zero div"
-            total['dual_percent'] = "zero div"
-            total['uncoded_percent'] = "zero div"
-            total['disagreement'] = "zero div"
-            total['agree_coded_only'] = "zero div"
+            total['agreement'] = "n/a"
+            total['dual_percent'] = "n/a"
+            total['uncoded_percent'] = "n/a"
+            total['disagreement'] = "n/a"
+            total['agree_coded_only'] = "n/a"
         # Cohen's Kappa
         '''
         https://en.wikipedia.org/wiki/Cohen%27s_kappa
@@ -1150,7 +1150,7 @@ class DialogReportCoderComparisons(QtWidgets.QDialog):
         BELOW IS BETTER - ONLY LOOKS AT PROPORTIONS OF CODED CHARACTERS
         NEED TO CONFIRM THIS IS THE CORRECT APPROACH
         '''
-        total['kappa'] = "zerodiv"
+        total['kappa'] = "n/a"
         try:
             unique_codings = total['coded0'] + total['coded1'] - total['dual_coded']
             Po = total['dual_coded'] / unique_codings
