@@ -842,6 +842,7 @@ class DialogReportCoderComparisons(QtWidgets.QDialog):
         self.setWindowFlags(self.windowFlags() & ~QtCore.Qt.WindowType.WindowContextHelpButtonHint)
         self.ui.pushButton_run.setEnabled(False)
         self.ui.pushButton_run.pressed.connect(self.calculate_statistics)
+        self.ui.pushButton_files.setIcon(qta.icon('mdi6.file-document-multiple-outline', options=[{'scale_factor': 1.4}]))
         self.ui.pushButton_files.pressed.connect(self.select_files)
         self.ui.pushButton_run.setIcon(qta.icon('mdi6.play', options=[{'scale_factor': 1.4}]))
         self.ui.pushButton_clear.pressed.connect(self.clear_selection)
