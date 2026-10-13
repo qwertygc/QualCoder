@@ -185,7 +185,7 @@
        <rect>
         <x>440</x>
         <y>27</y>
-        <width>110</width>
+        <width>32</width>
         <height>32</height>
        </rect>
       </property>
@@ -193,35 +193,20 @@
        <string>Select text files for the comparison subcorpus</string>
       </property>
       <property name="text">
-       <string>Select files</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_files">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>97</y>
-        <width>751</width>
+        <x>482</x>
+        <y>27</y>
+        <width>280</width>
         <height>32</height>
        </rect>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>32</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777213</width>
-        <height>32</height>
-       </size>
-      </property>
       <property name="text">
-       <string>Files: all text files</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
+       <string>Files: All</string>
       </property>
      </widget>
     </widget>

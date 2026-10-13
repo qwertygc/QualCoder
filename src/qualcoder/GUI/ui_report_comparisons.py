@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/workspace/github__qwertygc__QualCoder/src/GUI_UIs/ui_report_comparisons.ui'
+# Form implementation generated from reading ui file 'src/GUI_UIs/ui_report_comparisons.ui'
 #
 # Created by: PyQt6 UI code generator 6.11.0
 #
@@ -56,13 +56,11 @@ class Ui_Dialog_reportComparisons(object):
         self.pushButton_help1.setText("")
         self.pushButton_help1.setObjectName("pushButton_help1")
         self.pushButton_files = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButton_files.setGeometry(QtCore.QRect(440, 27, 110, 32))
+        self.pushButton_files.setGeometry(QtCore.QRect(440, 27, 32, 32))
+        self.pushButton_files.setText("")
         self.pushButton_files.setObjectName("pushButton_files")
         self.label_files = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_files.setGeometry(QtCore.QRect(10, 97, 751, 32))
-        self.label_files.setMinimumSize(QtCore.QSize(0, 32))
-        self.label_files.setMaximumSize(QtCore.QSize(16777213, 32))
-        self.label_files.setWordWrap(True)
+        self.label_files.setGeometry(QtCore.QRect(482, 27, 280, 32))
         self.label_files.setObjectName("label_files")
         self.verticalLayout.addWidget(self.groupBox)
         self.groupBox_2 = QtWidgets.QGroupBox(parent=Dialog_reportComparisons)
@@ -98,5 +96,4 @@ class Ui_Dialog_reportComparisons(object):
         self.pushButton_export.setToolTip(_translate("Dialog_reportComparisons", "Export Excel"))
         self.pushButton_help1.setToolTip(_translate("Dialog_reportComparisons", "Statistics help"))
         self.pushButton_files.setToolTip(_translate("Dialog_reportComparisons", "Select text files for the comparison subcorpus"))
-        self.pushButton_files.setText(_translate("Dialog_reportComparisons", "Select files"))
-        self.label_files.setText(_translate("Dialog_reportComparisons", "Files: all text files"))
+        self.label_files.setText(_translate("Dialog_reportComparisons", "Files: All"))
