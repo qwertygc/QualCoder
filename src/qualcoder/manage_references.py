@@ -23,7 +23,6 @@ https://qualcoder.org/
 
 import datetime
 import os
-from pathlib import Path
 from rispy import TAG_KEY_MAPPING
 import logging
 from operator import itemgetter

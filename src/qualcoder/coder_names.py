@@ -282,7 +282,7 @@ class DialogCoderNames(QtWidgets.QDialog):
                 for sql in sqls:
                     try:
                         self.cursor.execute(sql, [new_name, old_name])
-                    except Exception as e:
+                    except Exception:
                         table_name = "<unknown>"
                         match = re.search(r'^\s*update\s+([^\s]+)', sql, re.IGNORECASE)
                         if match:

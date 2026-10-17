@@ -567,7 +567,7 @@ class DialogSQL(QtWidgets.QDialog):
         action_sort_ascending.triggered.connect(self.sort_ascending)
         action_sort_descending = menu.addAction(_("Sort descending"))
         action_sort_descending.triggered.connect(self.sort_descending)
-        action = menu.exec(self.ui.tableWidget_results.mapToGlobal(position))
+        menu.exec(self.ui.tableWidget_results.mapToGlobal(position))
 
     def sort_ascending(self):
         """ Sort rows on selected column in ascending order. """

@@ -110,7 +110,7 @@ class DialogReportFileSummary(QtWidgets.QDialog):
         selected = self.ui.listWidget.currentItem()
         if not selected:
             return
-        file_ = next((f for f in self.files if f['name'] == selected.text()), None)
+        next((f for f in self.files if f['name'] == selected.text()), None)
         menu = QtWidgets.QMenu()
         menu.setStyleSheet(f"QMenu {{font-size:{self.app.settings['fontsize']}pt}} ")
         action_show_files_like = menu.addAction(_("Show files like"))
@@ -455,7 +455,7 @@ class DialogReportFileSummary(QtWidgets.QDialog):
         msecs = None
         if vlc:
             instance = vlc.Instance()
-            mediaplayer = instance.media_player_new()
+            instance.media_player_new()
             media = instance.media_new(abs_path)
             media.parse()
             msecs = media.get_duration()

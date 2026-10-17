@@ -4805,7 +4805,7 @@ class AiMcpServer:
         return vectorstore
 
     def _read_vector_search(self, options: Dict[str, Any]) -> Dict[str, Any]:
-        vectorstore = self._require_ready_vectorstore()
+        self._require_ready_vectorstore()
 
         queries = options.get("queries", [])
         if not isinstance(queries, list) or len(queries) == 0:

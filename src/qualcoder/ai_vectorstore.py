@@ -54,9 +54,8 @@ from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.vectorstores import FAISS as LegacyFAISS
 import numpy as np
 from PyQt6 import QtCore, QtWidgets
-import sentence_transformers  # Keep a reference so it is not garbage collected in subthreads.
 
-from qualcoder.ai_async_worker import AIException, GuiThreadRelay, Worker, WorkerSignals
+from qualcoder.ai_async_worker import GuiThreadRelay, Worker, WorkerSignals
 from qualcoder.ai_runtime import (
     VECTORSTORE_FAILED,
     VECTORSTORE_INDEXING,
@@ -65,7 +64,6 @@ from qualcoder.ai_runtime import (
     VECTORSTORE_UNLOADED,
 )
 from qualcoder.error_dlg import show_error_dlg
-from qualcoder.helpers import Message
 
 path = os.path.abspath(os.path.dirname(__file__))
 logger = logging.getLogger(__name__)

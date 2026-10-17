@@ -26,7 +26,6 @@ import csv
 import datetime
 import html
 import logging
-import os
 from pathlib import Path
 from random import randint
 import re

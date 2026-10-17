@@ -25,7 +25,7 @@ import json
 import logging
 import os
 
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtGui, QtWidgets
 from PyQt6.QtCore import Qt
 import qtawesome as qta
 from .GUI.ui_dialog_node_relations import Ui_Dialog_node_relations

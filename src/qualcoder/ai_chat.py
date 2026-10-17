@@ -35,7 +35,6 @@ import traceback
 import unicodedata
 from typing import List, Dict, Any, Optional, Tuple
 from urllib.parse import urlencode, quote, unquote, urlparse, parse_qs, urlunparse
-import webbrowser
 
 from langchain_core.documents.base import Document
 from langchain_core.messages.ai import AIMessage
@@ -1501,9 +1500,6 @@ class DialogAIChat(QtWidgets.QDialog):
         """Set up the stylesheets for the ui and the chat entries
         """
         self.load_ai_permissions()
-        font_css = f'font: {self.app.settings["fontsize"]}pt "{self.app.settings["font"]}";'
-        dialog_bg = self.ui.pushButton_question.palette().color(QPalette.ColorRole.Button).name()
-        
         self.font = f'font: {self.app.settings["fontsize"]}pt "{self.app.settings["font"]}";'
         self.setStyleSheet(self.font)
         # Set progressBar color to default highlight color
@@ -3344,7 +3340,6 @@ class DialogAIChat(QtWidgets.QDialog):
         latest_reflection_summary = ""
         methodology_gate = self._empty_methodology_gate()
         pending_user_decision = None
-        deferred_calls_for_next_round: List[Dict[str, Any]] = []
 
         def _prepare_mcp_request(method_name: str, raw_params: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
             prepared_request_params = dict(raw_params) if isinstance(raw_params, dict) else {}
@@ -3488,7 +3483,6 @@ class DialogAIChat(QtWidgets.QDialog):
                 final_hint = initial_brief
             planner_methodology_gate = plan_state["methodology_gate"]
             methodology_gate = self._merge_methodology_gate(methodology_gate, planner_methodology_gate)
-            planner_user_decision_required = plan_state["user_decision_required"]
             planner_decision_question = plan_state["decision_question"]
             planner_decision_context = plan_state["decision_context"]
             if self._is_methodology_gate_blocking(planner_methodology_gate):
@@ -3562,7 +3556,6 @@ class DialogAIChat(QtWidgets.QDialog):
                     final_hint = initial_brief
                 planner_methodology_gate = plan_state["methodology_gate"]
                 methodology_gate = self._merge_methodology_gate(methodology_gate, planner_methodology_gate)
-                planner_user_decision_required = plan_state["user_decision_required"]
                 planner_decision_question = plan_state["decision_question"]
                 planner_decision_context = plan_state["decision_context"]
                 if self._is_methodology_gate_blocking(planner_methodology_gate):
@@ -4904,13 +4897,11 @@ data collected. This information will accompany every prompt sent to the AI, res
 
         ai_data = []
         max_ai_data_length = round(0.5 * (self.app.ai.large_llm_context_window * 4)) 
-        max_ai_data_length_reached = False  # TODO varaible not used
         ai_data_length = 0
         for i in range(0, topic_analysis_max_chunks):
             if i >= len(chunks): 
                 break
             if ai_data_length >= max_ai_data_length:
-                max_ai_data_length_reached = True  # TODO variable not used
                 break
             chunk = chunks[i]
             fulltext = self.app.get_text_fulltext(chunk.metadata["id"])
@@ -4995,11 +4986,9 @@ data collected. This information will accompany every prompt sent to the AI, res
         # self.ai_semantic_search_chunks = chunks
         ai_data = []
         max_ai_data_length = round(0.5 * (self.app.ai.large_llm_context_window * 4)) 
-        max_ai_data_length_reached = False  # TODO varaible not used
         ai_data_length = 0
         for i in range(0, len(chunks)):
             if ai_data_length >= max_ai_data_length:
-                max_ai_data_length_reached = True  # TODO variable not used
                 break
             chunk = chunks[i]
             fulltext = self.app.get_text_fulltext(chunk.metadata["id"])
@@ -8821,7 +8810,6 @@ data collected. This information will accompany every prompt sent to the AI, res
                 final_hint = initial_brief
             planner_methodology_gate = plan_state["methodology_gate"]
             methodology_gate = self._merge_methodology_gate(methodology_gate, planner_methodology_gate)
-            planner_user_decision_required = plan_state["user_decision_required"]
             planner_decision_question = plan_state["decision_question"]
             planner_decision_context = plan_state["decision_context"]
             if self._is_methodology_gate_blocking(planner_methodology_gate):
@@ -8895,7 +8883,6 @@ data collected. This information will accompany every prompt sent to the AI, res
                     final_hint = initial_brief
                 planner_methodology_gate = plan_state["methodology_gate"]
                 methodology_gate = self._merge_methodology_gate(methodology_gate, planner_methodology_gate)
-                planner_user_decision_required = plan_state["user_decision_required"]
                 planner_decision_question = plan_state["decision_question"]
                 planner_decision_context = plan_state["decision_context"]
                 if self._is_methodology_gate_blocking(planner_methodology_gate):

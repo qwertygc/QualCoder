@@ -1188,10 +1188,9 @@ class DialogCases(QtWidgets.QDialog):
         cursor = self.ui.textBrowser.cursorForPosition(position)
         menu = QtWidgets.QMenu()
         menu.setStyleSheet(f"QMenu {{font-size:{self.app.settings['fontsize']}pt}} ")
-        action_link = None
         for item in self.display_text_links:
             if item['pos0'] <= cursor.position() <= item['pos1']:
-                action_link = menu.addAction(_("Open"))
+                menu.addAction(_("Open"))
         action = menu.exec(self.ui.textBrowser.mapToGlobal(position))
         if action is None:
             return

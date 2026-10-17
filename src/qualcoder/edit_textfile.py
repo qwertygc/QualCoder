@@ -26,7 +26,6 @@ from copy import copy
 # import difflib  # Use diff_match_patch as it is 20x faster. Keep this in case its needed later.
 import diff_match_patch
 import logging
-from pathlib import Path
 import qtawesome as qta  # see: https://pictogrammers.com/library/mdi/
 import re
 import unicodedata
@@ -87,7 +86,7 @@ class DialogEditTextFile(QtWidgets.QDialog):
 
         self.get_cases_codings_annotations()
         if self.name[-3:].lower() == ".md":
-            highlighter = MarkdownHighlighter(self.ui.plainTextEdit, self.app)
+            MarkdownHighlighter(self.ui.plainTextEdit, self.app)
         self.ui.plainTextEdit.setPlainText(self.text)
         self.detect_text_direction()
         self.ui.plainTextEdit.setFocus()

@@ -3435,7 +3435,7 @@ Click "Yes" to start now.')
             msg_box.setStandardButtons(QtWidgets.QMessageBox.StandardButton.NoButton)  # Clear default buttons
             keep_button = msg_box.addButton(_('Keep'), QtWidgets.QMessageBox.ButtonRole.YesRole)
             switch_button = msg_box.addButton(_('Switch'), QtWidgets.QMessageBox.ButtonRole.NoRole)
-            cancel_button = msg_box.addButton(_('Cancel'), QtWidgets.QMessageBox.ButtonRole.RejectRole)
+            msg_box.addButton(_('Cancel'), QtWidgets.QMessageBox.ButtonRole.RejectRole)
             msg_box.setDefaultButton(keep_button) 
             msg_box.exec()
             res = msg_box.clickedButton()
@@ -3827,8 +3827,6 @@ Click "Yes" to start now.')
         self.app.conn.commit()
         
         # Fix missing folders within QualCoder project. Otherwise, will cause import errors.
-        span = '<span style="color:red">'
-        end_span = "</span>"
         documents_folder = Path(self.app.project_path) / "documents"
         documents_folder.mkdir(exist_ok=True)
         audio_folder = Path(self.app.project_path) / "audio"
@@ -4186,7 +4184,6 @@ def gui():
     # print("Qt version: " + str(QtCore.qVersion()))
     qual_app = App()
     settings = qual_app.settings
-    ai_models = qual_app.ai_models
     project_path = qual_app.get_most_recent_projectpath()
     
     if sys.platform in ["linux", "bsd"]: 

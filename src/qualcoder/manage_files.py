@@ -2847,7 +2847,7 @@ class DialogManageFiles(QtWidgets.QDialog):
                     # print(f"Insert name:{col}, value:{val}, Fid/Cid:{file_or_case_id}, F/C:{attr_file_or_case}")
                     cur.execute("insert into attribute (name, value, id, attr_type, date, owner) values(?,?,?,?,?,?)",
                                 (col, val, file_or_case_id, attr_file_or_case, now, self.app.settings['codername']))
-                except sqlite3.IntegrityError as err:
+                except sqlite3.IntegrityError:
                     # Replace existing file or case attribute data with new data
                     try:
                         cur.execute("update attribute set value=?, date=? where name=? and id=? and attr_type=?",
@@ -3159,7 +3159,7 @@ class DialogManageFiles(QtWidgets.QDialog):
 
         # Check for duplicated filename and update model, widget and database
         path_obj = Path(mediapath)
-        head_path, filename = str(path_obj.parent), path_obj.name
+        filename = path_obj.name
         if any(d['name'] == filename for d in self.source):
             QtWidgets.QMessageBox.warning(self, _('Duplicate file'), _("Duplicate filename.\nFile not imported"))
             return

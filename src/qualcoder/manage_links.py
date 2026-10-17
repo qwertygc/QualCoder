@@ -22,7 +22,6 @@ https://qualcoder.org/
 """
 
 import logging
-import os
 from pathlib import Path
 import time
 
