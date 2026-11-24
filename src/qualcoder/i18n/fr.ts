@@ -55,7 +55,7 @@
         <location filename="../../GUI_UIs/ui_dialog_charts.ui" line="0"/>
         <location filename="../../GUI_UIs/ui_dialog_charts.ui" line="0"/>
         <source>Select coder</source>
-        <translation>Sélectionner un codeur·se</translation>
+        <translation>Sélectionner un codeur⋅se</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_charts.ui" line="0"/>
@@ -256,7 +256,7 @@ This is temporary and must be selected each time the Charts screen is opened.
 The file must be plain text with one word per line.
 Each word is excluded in the n-grams=1 Word cloud.</source>
         <translation>Si vous sélectionnez un fichier texte ici, cela remplacera les mots vides existants dans le logiciel, ainsi que ceux stockés dans le dossier de configuration .qualcoder.
-Cette modification est temporaire et doit être sélectionnée à chaque ouverture de l&apos;écran « Graphiques ».
+Cette modification est temporaire et doit être sélectionnée à chaque ouverture de l’écran « Graphiques ».
 
 Le fichier doit être au format texte brut, avec un mot par ligne.
 Chaque mot sera exclu du nuage de mots « n-grams=1 ».</translation>
@@ -484,7 +484,7 @@ Clic droit pour les options</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_graph_models.ui" line="0"/>
         <source>Co-occurrence types:</source>
-        <translation>Types de cooccurences :</translation>
+        <translation>Types de cooccurrences :</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_graph_models.ui" line="0"/>
@@ -605,7 +605,7 @@ Clic droit pour les options</translation>
     <message>
         <location filename="../../GUI_UIs/ui_report_matching_segments.ui" line="0"/>
         <source>Select coder. Blank for all.</source>
-        <translation>Sélectionner le codeur·se. Vide pour tous.</translation>
+        <translation>Sélectionner le codeur⋅se. Vide pour tous.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_report_matching_segments.ui" line="0"/>
@@ -636,7 +636,7 @@ Clic droit pour les options</translation>
     <message>
         <location filename="../../GUI_UIs/ui_report_matching_segments.ui" line="0"/>
         <source>Select file(s), coder, 2 or more codes. Can exclude results by excluding a code (right click on code).</source>
-        <translation>Sélectionner fichier(s), codeur·se, 2+ codes. Exclure un code (clic droit).</translation>
+        <translation>Sélectionner fichier(s), codeur⋅se, 2+ codes. Exclure un code (clic droit).</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_report_matching_segments.ui" line="0"/>
@@ -1237,12 +1237,12 @@ Attention : cette action est irréversible.</translation>
         <location filename="../../GUI_UIs/ui_dialog_text_stats.ui" line="0"/>
         <location filename="../../GUI_UIs/ui_dialog_text_stats.ui" line="0"/>
         <source>Similarity graph: each node is a form (size = frequency), each edge links two forms co-occurring in the same segment (width = association strength), node colours = detected communities. Below: the strongest edges and the communities.</source>
-        <translation>Graphique de similarité : chaque noeud est une forme (taille = fréquence), chaque lien relie deux formes qui cohabitent dans le même segment (largeur = force d’association), couleurs de nœud = communautés détectées. Ci-dessous : les liens les plus forts et les communautés.</translation>
+        <translation>Graphique de similarité : chaque nœud est une forme (taille = fréquence), chaque lien relie deux formes qui cohabitent dans le même segment (largeur = force d’association), couleurs de nœud = communautés détectées. Ci-dessous : les liens les plus forts et les communautés.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_text_stats.ui" line="0"/>
         <source>Summary of the last graph: nodes, edges, communities</source>
-        <translation>Résumé du dernier graphique: noeuds, liens, communautés</translation>
+        <translation>Résumé du dernier graphique: nœuds, liens, communautés</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_text_stats.ui" line="0"/>
@@ -1461,7 +1461,7 @@ Attention : cette action est irréversible.</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_text_stats.ui" line="0"/>
         <source>Embedding model:</source>
-        <translation>Modèle d&apos;intégration:</translation>
+        <translation>Modèle d’intégration:</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_text_stats.ui" line="0"/>
@@ -1747,7 +1747,7 @@ Attention : cette action est irréversible.</translation>
     <message>
         <location filename="../../GUI_UIs/ui_ai_search.ui" line="0"/>
         <source> Edit </source>
-        <translation> Editer </translation>
+        <translation> Éditer </translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_ai_search.ui" line="0"/>
@@ -1790,12 +1790,12 @@ Attention : cette action est irréversible.</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_relations.ui" line="0"/>
         <source>This coder</source>
-        <translation>Ce codeur·se</translation>
+        <translation>Ce codeur⋅se</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_relations.ui" line="0"/>
         <source>All coders</source>
-        <translation>Tous les codeur·ses</translation>
+        <translation>Tous les codeur⋅ses</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_relations.ui" line="0"/>
@@ -1940,12 +1940,12 @@ Classement par nom de fichier et nom de code.</translation>
     <message>
         <location filename="../../GUI_UIs/ui_comparison_table.ui" line="0"/>
         <source>Select categories</source>
-        <translation>Sélectionner des catégories</translation>
+        <translation>Sélectionner les catégories</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_comparison_table.ui" line="0"/>
         <source>Select codes</source>
-        <translation>Sélectionner des codes</translation>
+        <translation>Sélectionner les codes</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_comparison_table.ui" line="0"/>
@@ -2034,7 +2034,7 @@ Classement par nom de fichier et nom de code.</translation>
         <location filename="../../GUI_UIs/ui_dialog_cooccurrence.ui" line="0"/>
         <source>Export Co-occurrence Graph Image
 Right-click for format options</source>
-        <translation>Exporter une image du graphique des co-occurences
+        <translation>Exporter une image du graphique des co-occurrences
 Clic droit pour les options de format</translation>
     </message>
     <message>
@@ -2440,7 +2440,7 @@ Le fichier doit avoir une ligne d’en-tête et la première colonne doit conten
     <message>
         <location filename="../../GUI_UIs/ui_dialog_cases.ui" line="0"/>
         <source>Export attributes to file</source>
-        <translation>Export les attributs en fichier</translation>
+        <translation>Exporter les attributs en fichier</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_cases.ui" line="0"/>
@@ -2542,7 +2542,7 @@ Touche 5 - Avancer 5 secondes</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_av.ui" line="0"/>
         <source>1.0x</source>
-        <translation>1.0x</translation>
+        <translation>1,0x</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_av.ui" line="0"/>
@@ -3233,7 +3233,7 @@ Rapport ODT : rapport du texte et des zones codées.</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_code_summary.ui" line="0"/>
         <source>Search for next occurrence in results</source>
-        <translation>Rechercher la prochaine occurence dans les résultats</translation>
+        <translation>Rechercher la prochaine occurrence dans les résultats</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_code_summary.ui" line="0"/>
@@ -3337,7 +3337,7 @@ Clic-droit pour les options : tous (par défaut), premier, code dans le code.</t
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_text.ui" line="0"/>
         <source>Delete all codes by this coder from this file</source>
-        <translation>Effacer tous les codes de ce codeur·se de ce fichier</translation>
+        <translation>Effacer tous les codes de ce codeur⋅se de ce fichier</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_text.ui" line="0"/>
@@ -3413,7 +3413,7 @@ car toutes les positions assignées peuvent être incorrectes. </translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_text.ui" line="0"/>
         <source>odt report</source>
-        <translation>rapport odt</translation>
+        <translation>rapport ODT</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_text.ui" line="0"/>
@@ -3470,7 +3470,7 @@ Formatted like below for name detection.
 Limité à des noms de 63 caractères maximum. 
 Le nom doit être au début d’une nouvelle ligne.
 Formaté comme ci-dessous pour la détection du nom.
-« Nom : », « {Nom} » ou « [Nom] »</translation>
+« Name: », « {Name} » ou « [Name] »</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_text.ui" line="0"/>
@@ -3495,7 +3495,7 @@ Formaté comme ci-dessous pour la détection du nom.
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_text.ui" line="0"/>
         <source>Exit Edit text </source>
-        <translation>Quitter Editer le texte </translation>
+        <translation>Quitter Éditer le texte </translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_code_text.ui" line="0"/>
@@ -3780,7 +3780,7 @@ Le positionnement risque de ne pas sajuster correctement. Effectuez une copie de
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_file_summary.ui" line="0"/>
         <source>Search:</source>
-        <translation>Rechercher :</translation>
+        <translation>Recherche :</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_file_summary.ui" line="0"/>
@@ -3790,7 +3790,7 @@ Le positionnement risque de ne pas sajuster correctement. Effectuez une copie de
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_file_summary.ui" line="0"/>
         <source>Search for next occurrence in results</source>
-        <translation>Rechercher la prochaine occurence dans les résultats</translation>
+        <translation>Rechercher la prochaine occurrence dans les résultats</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_file_summary.ui" line="0"/>
@@ -3942,7 +3942,7 @@ Cochez Tous les journaux pour rechercher dans tous les journaux</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_journals.ui" line="0"/>
         <source>Coder</source>
-        <translation>Codeur</translation>
+        <translation>Codeur⋅se</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_journals.ui" line="0"/>
@@ -3993,7 +3993,7 @@ Cochez Tous les journaux pour rechercher dans tous les journaux</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_manage_files.ui" line="0"/>
         <source>File name filter</source>
-        <translation>Fitrer par nom de fichier</translation>
+        <translation>Filtrer par nom de fichier</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_manage_files.ui" line="0"/>
@@ -4124,7 +4124,7 @@ Formatted like below for name detection.
         <translation>Sélectionnez une retranscription de texte pour surligner les intervenant⋅es.
 Le nom de l’intervenant⋅e doit figurer au début d’une nouvelle ligne et comporter moins de 64 caractères.
 Formaté comme ci-dessous pour la détection du nom.
-« Nom : », « {Nom} » ou « [Nom] »</translation>
+« Name: », « {Name} » ou « [Name] »</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_manage_files.ui" line="0"/>
@@ -4475,7 +4475,7 @@ Sensible à la casse : ajouter une entrée par variante (ex. : Tom Jones et TOM 
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_code_frequencies.ui" line="0"/>
         <source>Code and category frequencies: overall and by coder</source>
-        <translation>Effectifs des codes et des catégories: globale et par codeur·se</translation>
+        <translation>Effectifs des codes et des catégories: globale et par codeur⋅se</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_code_frequencies.ui" line="0"/>
@@ -4569,7 +4569,7 @@ Sensible à la casse : ajouter une entrée par variante (ex. : Tom Jones et TOM 
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_codings.ui" line="0"/>
         <source>Select coder. Blank for all.</source>
-        <translation>Sélectionner le codeur·se. Vide pour tous.</translation>
+        <translation>Sélectionner le codeur⋅se. Vide pour tous.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_codings.ui" line="0"/>
@@ -4669,7 +4669,7 @@ Modifiez les paramètres du nombre de caractères et du style d’affichage.</tr
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_codings.ui" line="0"/>
         <source>Search for next occurrence in results</source>
-        <translation>Chercher la prochaine occurence dans les résultats</translation>
+        <translation>Rechercher la prochaine occurrence dans les résultats</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_codings.ui" line="0"/>
@@ -4680,9 +4680,9 @@ Images vertically. Image codings shown first and ordered by y values from the to
 AV timeline. Audio video codings shown first and ordered by their time positions.
 </source>
         <translation>Ordre de tri des résultats.
-Définissez ce paramètre avant d&apos;afficher les résultats.
+Définissez ce paramètre avant d’afficher les résultats.
 
-Images à la verticale. Les codes d&apos;image sont affichés en premier et classés par ordre décroissant des valeurs y, de haut en bas.
+Images à la verticale. Les codes d’image sont affichés en premier et classés par ordre décroissant des valeurs y, de haut en bas.
 Chronologie AV. Les codes audio-vidéo sont affichés en premier et classés par ordre chronologique.
 </translation>
     </message>
@@ -4747,7 +4747,7 @@ Chronologie AV. Les codes audio-vidéo sont affichés en premier et classés par
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_codings.ui" line="0"/>
         <source>Select Coder. Blank for all.</source>
-        <translation>Sélectionner le codeur·se. Vide pour tous.</translation>
+        <translation>Sélectionner le codeur⋅se. Vide pour tous.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_report_codings.ui" line="0"/>
@@ -4784,8 +4784,8 @@ Chronologie AV. Les codes audio-vidéo sont affichés en premier et classés par
         <location filename="../../GUI_UIs/ui_dialog_report_codings.ui" line="0"/>
         <source>Checked. Maximise image size for A4 page.
 Unchecked. Maximum image width or height 400 pixels.</source>
-        <translation>Cochée : agrandir l&apos;image au maximum pour une page A4.
-Décochée : largeur ou hauteur maximale de l&apos;image : 400 pixels.</translation>
+        <translation>Cochée : agrandir l’image au maximum pour une page A4.
+Décochée : largeur ou hauteur maximale de l’image : 400 pixels.</translation>
     </message>
 </context>
 <context>
@@ -4810,12 +4810,12 @@ Décochée : largeur ou hauteur maximale de l&apos;image : 400 pixels.</translat
         <source>To compare coding.
 Select two coders, one file, one code.</source>
         <translation>Pour comparer les codages.
-Sélectionnez deux codeur·ses, un fichier, un code.</translation>
+Sélectionnez deux codeur⋅ses, un fichier, un code.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_report_compare_coder_file.ui" line="0"/>
         <source>Coder comparisons by file</source>
-        <translation>Comparaison de codeur·ses par fichier</translation>
+        <translation>Comparaison de codeur⋅ses par fichier</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_report_compare_coder_file.ui" line="0"/>
@@ -4924,7 +4924,7 @@ Wildcards for &apos;like&apos; are % and _</source>
         <translation>Sélectionnez les paramètres pour les attributs.
 BETWEEN nécessite 2 valeurs séparées par ; (ex. : 1;100).
 IN et NOT IN acceptent 1 ou plusieurs valeurs séparées par ;.
-Jokers pour &apos;like&apos; : % et _</translation>
+Jokers pour ’like’ : % et _</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_report_attribute_parameters.ui" line="0"/>
@@ -5097,7 +5097,7 @@ Non recommandé, sauf si vous avez beaucoup de gros fichiers qui ralentissent la
         <location filename="../../GUI_UIs/ui_dialog_settings.ui" line="0"/>
         <source>Set this name as the current coder.
 </source>
-        <translation>Définir ce nom comme le codeur·se actuel.
+        <translation>Définir ce nom comme le codeur⋅se actuel.
 </translation>
     </message>
     <message>
@@ -5130,8 +5130,8 @@ Find the line beginning language =
 Then update it. For example:
 language = it</source>
         <translation>Fermez puis rouvrez le logiciel pour que le changement de langue prenne effet.
-Les langues régulièrement mises à jour (par des humains et/ou par l&apos;IA) sont : de, es, fr, ja, pt, sv, zh.
-D&apos;autres langues peuvent être ajoutées si elles figurent dans le dossier src/qualcoder/i18n.
+Les langues régulièrement mises à jour (par des humains et/ou par l’IA) sont : de, es, fr, ja, pt, sv, zh.
+D’autres langues peuvent être ajoutées si elles figurent dans le dossier src/qualcoder/i18n.
 Pour ce faire, modifiez le fichier config.ini en indiquant une autre langue disponible.
 Recherchez la ligne commençant par language =
 Puis modifiez-la. Par exemple :
@@ -5267,7 +5267,7 @@ language = it</translation>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_settings.ui" line="0"/>
         <source>Where the Project, Manage, Coding, Reports and AI Agent tabs are shown</source>
-        <translation>L&apos;endroit où s&apos;affichent les onglets « Projet », « Gestion », « Codage », « Rapports » et « Agent IA »</translation>
+        <translation>L’endroit où s’affichent les onglets « Projet », « Gestion », « Codage », « Rapports » et « Agent IA »</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_settings.ui" line="0"/>
@@ -5309,14 +5309,14 @@ language = it</translation>
         <source>This allows external AI agents such as Claude Code, Codex, OpenCode, or Hermes Agent to access the currently opened QualCoder project via MCP on localhost (127.0.0.1).
 The same AI permissions apply as for the internal AI agent (Read-Only / Sandboxed / Full Access).
 This is an experimental feature. Use it with care.</source>
-        <translation>Cela permet à des agents IA externes tels que Claude Code, Codex, OpenCode ou Hermes Agent d&apos;accéder au projet QualCoder actuellement ouvert via MCP sur localhost (127.0.0.1).
-Les autorisations d&apos;accès à l’IA sont les mêmes que pour l’agent IA interne (lecture seule / mode sandbox / accès complet).
-Il s&apos;agit d’une fonctionnalité expérimentale. À utiliser avec prudence.</translation>
+        <translation>Cela permet à des agents IA externes tels que Claude Code, Codex, OpenCode ou Hermes Agent d’accéder au projet QualCoder actuellement ouvert via MCP sur localhost (127.0.0.1).
+Les autorisations d’accès à l’IA sont les mêmes que pour l’agent IA interne (lecture seule / mode sandbox / accès complet).
+Il s’agit d’une fonctionnalité expérimentale. À utiliser avec prudence.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_settings.ui" line="0"/>
         <source>allow external MCP access</source>
-        <translation>autoriser l&apos;accès externe au MCP</translation>
+        <translation>autoriser l’accès externe au MCP</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_settings.ui" line="0"/>
@@ -5382,7 +5382,7 @@ Il s&apos;agit d’une fonctionnalité expérimentale. À utiliser avec prudence
     <message>
         <location filename="../../GUI_UIs/ui_dialog_settings.ui" line="0"/>
         <source>Description:</source>
-        <translation>Description:</translation>
+        <translation>Description :</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_settings.ui" line="0"/>
@@ -5513,7 +5513,7 @@ Il s&apos;agit d’une fonctionnalité expérimentale. À utiliser avec prudence
     <message>
         <location filename="../../GUI_UIs/ui_dialog_speakers.ui" line="0"/>
         <source>How each speaker is marked at the start of a line: Name: , #Name: , @Name: , [Name] , {Name} , or a custom pattern. Auto-detect picks the format with the most turns.</source>
-        <translation>Comment chaque intervenant⋅e est marqué au début d’une ligne: Nom: , #Nom: , @Nom: , [Nom] , {Nom} , ou un motif personnalisé. La détection automatique sélectionne le format comportant le plus grand nombre d’occurences.</translation>
+        <translation>Comment chaque intervenant⋅e est marqué au début d’une ligne: Name: , #Name: , @Name: , [Name] , {Name} , ou un motif personnalisé. La détection automatique sélectionne le format comportant le plus grand nombre d’occurrences.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_dialog_speakers.ui" line="0"/>
@@ -5593,7 +5593,7 @@ Il s&apos;agit d’une fonctionnalité expérimentale. À utiliser avec prudence
     <message>
         <location filename="../../GUI_UIs/ui_dialog_speakers.ui" line="0"/>
         <source>Double-click a &quot;code as&quot; name to edit</source>
-        <translation>Double-cliquez sur le nom d&apos;un « code comme » pour le modifier</translation>
+        <translation>Double-cliquez sur le nom d’un « code comme » pour le modifier</translation>
     </message>
 </context>
 <context>
@@ -5658,7 +5658,7 @@ Il s&apos;agit d’une fonctionnalité expérimentale. À utiliser avec prudence
     <message>
         <location filename="../../GUI_UIs/ui_special_functions.ui" line="0"/>
         <source>Update coded text. Where text is out of sync due to emojis in document.</source>
-        <translation>Mettre à jour le texte codé. Lorsque le texte n&apos;est pas synchronisé en raison de la présence d&apos;émojis dans le document.</translation>
+        <translation>Mettre à jour le texte codé. Lorsque le texte n’est pas synchronisé en raison de la présence d’émojis dans le document.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_special_functions.ui" line="0"/>
@@ -6148,7 +6148,7 @@ N’encodez pas ce texte avant d’avoir rechargé Codage &gt; Coder le texte de
     <message>
         <location filename="../../GUI_UIs/ui_main.ui" line="0"/>
         <source>Choose a recently opened project to open it</source>
-        <translation>Choisissez un projet récemment ouvert pour l&apos;ouvrir</translation>
+        <translation>Choisissez un projet récemment ouvert pour l’ouvrir</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_main.ui" line="0"/>
@@ -6164,7 +6164,7 @@ N’encodez pas ce texte avant d’avoir rechargé Codage &gt; Coder le texte de
     <message>
         <location filename="../../GUI_UIs/ui_main.ui" line="0"/>
         <source>Your recent work in this project will appear here.</source>
-        <translation>Vos travaux récents dans le cadre de ce projet s&apos;afficheront ici.</translation>
+        <translation>Vos travaux récents dans le cadre de ce projet s’afficheront ici.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_main.ui" line="0"/>
@@ -6175,7 +6175,7 @@ N’encodez pas ce texte avant d’avoir rechargé Codage &gt; Coder le texte de
     <message>
         <location filename="../../GUI_UIs/ui_main.ui" line="0"/>
         <source>No project open. Its contents will appear here.</source>
-        <translation>Aucun projet n&apos;est ouvert. Son contenu s&apos;affichera ici.</translation>
+        <translation>Aucun projet n’est ouvert. Son contenu s’affichera ici.</translation>
     </message>
     <message>
         <location filename="../../GUI_UIs/ui_main.ui" line="0"/>
