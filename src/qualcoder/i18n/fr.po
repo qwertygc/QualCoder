@@ -1820,7 +1820,7 @@ msgstr "Rapport de restructuration PDF"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_tree.py:1585
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/__main__.py:3287
 msgid "Coder:"
-msgstr "Codeur·se :"
+msgstr "Codeur⋅se :"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6255
 msgid "Segments relocated approximately (need review):"
@@ -1922,12 +1922,12 @@ msgstr "Fréquence"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6500
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_text.py:3519
 msgid "Coder(s)"
-msgstr "Codeur·se(s)"
+msgstr "Codeur⋅se(s)"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6521
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_text.py:3547
 msgid "Code Co-occurrences"
-msgstr "Co-occurences de code"
+msgstr "Co-occurrences de code"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6525
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_text.py:3560
@@ -1942,12 +1942,12 @@ msgstr "Code B"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6525
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_text.py:3560
 msgid "Co-occurrence frequency"
-msgstr "Fréquence de co-occurence"
+msgstr "Fréquence de co-occurrence"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6537
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_text.py:3571
 msgid "No co-occurrences found in this file."
-msgstr "Pas de co-occurences trouvées dans ce fichier."
+msgstr "Pas de co-occurrences trouvées dans ce fichier."
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6540
 msgid "Coded Text Segments"
@@ -1973,7 +1973,7 @@ msgstr "Segments de texte codés"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_exact_matches.py:542
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_text.py:3636
 msgid "Coder"
-msgstr "Codeur·se"
+msgstr "Codeur⋅se"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6567
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/code_pdf.py:6625
@@ -2074,7 +2074,7 @@ msgstr "Confirmer ce changement"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/manage_links.py:138
 msgid "Multiple occurrences"
-msgstr "Multiples occurences"
+msgstr "Multiples occurrences"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/manage_links.py:138
 msgid "Multiples of text in path. Some links not updated."
@@ -2084,7 +2084,7 @@ msgstr ""
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/manage_links.py:148
 msgid "Search folders"
-msgstr "Rechercher des données"
+msgstr "Rechercher des dossiers"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/manage_links.py:177
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/manage_links.py:192
@@ -2308,7 +2308,7 @@ msgstr "Montrer des noms comme"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/journals.py:539
 msgid "Show this coder"
-msgstr "Montrer ce codeur·se"
+msgstr "Montrer ce codeur⋅se"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/journals.py:545
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/manage_files.py:1070
@@ -3896,7 +3896,7 @@ msgstr "1) Quel sujet souhaitez-vous approfondir ?"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/ai_search_dialog.py:234
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/ai_search_dialog.py:541
 msgid "Coders: "
-msgstr "Codeur·se : "
+msgstr "Codeur⋅se : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/ai_search_dialog.py:253
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/ai_search_dialog.py:563
@@ -4231,7 +4231,7 @@ msgstr "Vous ne pouvez pas cacher le codeur⋅se actuel."
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/coder_names.py:236
 msgid "New coder name:"
-msgstr "Nouveau nom de codeur·se :"
+msgstr "Nouveau nom de codeur⋅se :"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/coder_names.py:244
 msgid "Name already exists."
@@ -5300,7 +5300,7 @@ msgstr "Echec de l’import"
 msgid ""
 "The selected text file is not in IRaMuTeQ format (no **** header lines)."
 msgstr ""
-"Le fichier texte sélectionné n'est pas au format IRaMuTeQ (aucune ligne d'en-"
+"Le fichier texte sélectionné n’est pas au format IRaMuTeQ (aucune ligne d’en-"
 "tête ****)."
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/manage_files.py:2796
@@ -6879,7 +6879,7 @@ msgid ""
 "Select a coder name in Settings dropbox, otherwise coded text and media may "
 "appear uncoded."
 msgstr ""
-"Sélectionnez un codeur·se dans la liste déroulante des paramètres, sinon le "
+"Sélectionnez un codeur⋅se dans la liste déroulante des paramètres, sinon le "
 "texte et les médias peuvent être non codés."
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/refi.py:456
@@ -7335,7 +7335,7 @@ msgstr "Fichier texte\n"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:407
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/reports.py:1243
 msgid "No coders selected"
-msgstr "Aucun codeur·se sélectionné"
+msgstr "Aucun codeur⋅se sélectionné"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:437
 msgid "CODER COMPARISON FOR FILE"
@@ -7406,13 +7406,13 @@ msgstr "Non codé : "
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:715
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:843
 msgid "Coder 0: "
-msgstr "Codeur·se 0 : "
+msgstr "Codeur⋅se 0 : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:568
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:716
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:844
 msgid "Coder 1: "
-msgstr "Codeur·se 1 : "
+msgstr "Codeur⋅se 1 : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:569
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_compare_coder_file.py:717
@@ -7774,7 +7774,7 @@ msgstr "Enregistrer le fichier CSV"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:1198
 msgid "Each row contains filename, coder, coded, codename and categories."
 msgstr ""
-"Chaque ligne contient le nom du fichier, codeur·se, codage, nom du code et "
+"Chaque ligne contient le nom du fichier, codeur⋅se, codage, nom du code et "
 "catégories."
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:1082
@@ -7835,7 +7835,7 @@ msgstr "Paramètres de recherche des annotations"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:1575
 msgid "Coder: All coders"
-msgstr "Codeur·se : Tous les codeur·ses"
+msgstr "Codeur⋅se : Tous les codeur⋅ses"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:1579
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:1756
@@ -8060,7 +8060,7 @@ msgstr "Code changé"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:3041
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:3099
 msgid "Run report again to update display"
-msgstr "Exécuter à nouveau le rapport pour mettre à jour l'affichage"
+msgstr "Exécuter à nouveau le rapport pour mettre à jour l’affichage"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_codes.py:3113
 msgid "Delete coded section."
@@ -8201,7 +8201,7 @@ msgstr "Pas de co-occurrence"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/view_graph.py:2106
 msgid "No co-occurring codes found for the segments in the graph."
 msgstr ""
-"Aucun co-occurences de code n’a été trouvé pour les segments du graphe."
+"Aucun co-occurrences de code n’a été trouvé pour les segments du graphe."
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/view_graph.py:2201
 msgid "At least two code nodes are needed to show co-occurrence lines."
@@ -9092,7 +9092,7 @@ msgstr "Ajouter"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/view_graph.py:8668
 msgid "Co-occurrences"
-msgstr "Cooccurences"
+msgstr "Cooccurrences"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/view_graph.py:8678
 msgid "Add parent code"
@@ -10904,7 +10904,7 @@ msgstr ""
 "\n"
 "- [Effectifs des codes](qualcoder://menu/reports/code_frequencies) recense "
 "le nombre de fois où les codes et les catégories ont été utilisés.\n"
-"- [Occurences des codes par fichier/cas](qualcoder://menu/reports/"
+"- [Occurrences des codes par fichier/cas](qualcoder://menu/reports/"
 "code_comparison_table) offre un aperçu concis des endroits où les codes "
 "sélectionnés apparaissent le plus souvent.\n"
 "- [Résumé du fichier](qualcoder://menu/reports/file_summary) et [Résumé des "
@@ -14787,7 +14787,7 @@ msgstr "Problème lors de la création de la base de données "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/__main__.py:3352
 msgid "Coder name changed to: "
-msgstr "Nom du codeur·se changé en : "
+msgstr "Nom du codeur⋅se changé en : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/__main__.py:3361
 msgid ""
@@ -14881,7 +14881,7 @@ msgstr "Changer"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/__main__.py:3501
 msgid "Default coder name changed to: "
-msgstr "Le nom du codeur·se par défaut a été changé en : "
+msgstr "Le nom du codeur⋅se par défaut a été changé en : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/__main__.py:3510
 msgid "Checking the project database"
@@ -15233,7 +15233,7 @@ msgstr "Pas de code visible à tracer."
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_cooccurrence.py:652
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_cooccurrence.py:765
 msgid "There are no co-occurrences to plot."
-msgstr "Pas de co-occurences à tracer."
+msgstr "Pas de co-occurrences à tracer."
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_cooccurrence.py:656
 msgid "Code Co-occurrence Graph"
@@ -15251,7 +15251,7 @@ msgstr "Export réussie"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_cooccurrence.py:695
 msgid "Coloured nodes"
-msgstr "Noeuds colorés"
+msgstr "Nœuds colorés"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/report_cooccurrence.py:700
 msgid "Coloured labels"
@@ -16039,7 +16039,7 @@ msgstr " caractères.\n"
 msgid "Made by coder: "
 msgstr ""
 "Fait par le \n"
-"·euse : "
+"⋅euse : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/special_functions.py:232
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/special_functions.py:279
@@ -16605,7 +16605,7 @@ msgstr "Fichier des mots vides personnalisés"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:896
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:910
 msgid "No coded segments or documents found"
-msgstr "Aucun segment ni document codé n'a été trouvé"
+msgstr "Aucun segment ni document codé n’a été trouvé"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:457
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:503
@@ -16625,7 +16625,7 @@ msgstr "Formes actives : "
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:461
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:504
 msgid "Occurrences: "
-msgstr "Cooccurences : "
+msgstr "Cooccurrences : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:463
 msgid "Corpus built: "
@@ -16674,7 +16674,7 @@ msgstr "Modalité"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/irastats/report_html.py:96
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/irastats/report_odt.py:86
 msgid "Occurrences"
-msgstr "Cooccurences"
+msgstr "Cooccurrences"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:516
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/irastats/report_html.py:82
@@ -16766,7 +16766,7 @@ msgstr "segments"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:668
 msgid "IRaMuTeQ export"
-msgstr "Export d'IRaMuTeQ"
+msgstr "Export d’IRaMuTeQ"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:719
 msgid "Total inertia: "
@@ -16783,11 +16783,11 @@ msgstr "axes"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:749
 msgid "Correspondence analysis coordinates exported to: "
 msgstr ""
-"Coordonnées d'Analyse factorielle des correspondances exportées vers : "
+"Coordonnées d’Analyse factorielle des correspondances exportées vers : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:765
 msgid "Correspondence analysis factor map exported to: "
-msgstr "Carte des facteurs d'analyse de correspondance exportés vers : "
+msgstr "Carte des facteurs d’analyse de correspondance exportés vers : "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:766
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:1105
@@ -16882,7 +16882,7 @@ msgstr "Modèle"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:1010
 msgid "Unit of analysis"
-msgstr "Unité d'analyse"
+msgstr "Unité d’analyse"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:1012
 msgid "Noise documents"
@@ -16930,7 +16930,7 @@ msgstr "Graphique de similitude: "
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:1087
 msgid "nodes"
-msgstr "noeuds"
+msgstr "nœuds"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/dialog_text_stats.py:1088
 msgid "edges"
@@ -17412,7 +17412,7 @@ msgstr "Statistiques descendantes"
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/irastats/report_html.py:81
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/irastats/report_odt.py:72
 msgid "Total occurrences"
-msgstr "Total d’occurences"
+msgstr "Total d’occurrences"
 
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/irastats/report_html.py:83
 #: /home/qwerty/Bureau/QualCoder/src/qualcoder/irastats/report_odt.py:74
